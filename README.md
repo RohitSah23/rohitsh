@@ -48,12 +48,15 @@ This portfolio is deployed on Vercel. To deploy your own:
 
 ## 📬 Contact
 
-- **Twitter**: [@RohitSah23](https://x.com/RohitSah23)
-- **GitHub**: [@RohitSah23](https://github.com/RohitSah23)
-- **LinkedIn**: [@RohitSah23](https://linkedin.com/in/RohitSah23)
-- **Email**: [rohitisog@gmail.com](mailto\:rohitisog@gmail.com)
+- [![LinkedIn](https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2013.png)](https://www.linkedin.com/in/RohitSah23)
+- [![GitHub](https://img.shields.io/badge/GitHub-RohitSah23-black?logo=github&logoColor=white)](https://github.com/RohitSah23)
+- [![X](https://img.shields.io/badge/X-RohitSah23-1DA1F2?logo=x&logoColor=white)](https://x.com/RohitSah23)
+- [![Peerlist](https://img.shields.io/badge/Peerlist-RohitSah23-orange?logo=peerlist&logoColor=white)](https://peerlist.io/RohitSah23)
+- [![Telegram](https://img.shields.io/badge/Telegram-RohitSah23-0088cc?logo=telegram&logoColor=white)](https://t.me/RohitSah23)
+- [![Discord](https://img.shields.io/badge/Discord-RohitSah23-7289da?logo=discord&logoColor=white)](https://discord.com/users/RohitSah23)
+- [![Email](https://img.shields.io/badge/Email-rohitisog%40gmail.com-blue?logo=gmail&logoColor=white)](mailto:rohitisog@gmail.com)
 
----
+Feel free to connect, collaborate, or ask any questions you may have!
 
 Made with ❤️ by Rohit 🚀
 
