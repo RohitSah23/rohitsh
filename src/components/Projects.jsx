@@ -69,7 +69,7 @@ const otherProjects = [
 
 const Projects = () => {
   return (
-    <div className="p-8">
+    <div className="px-8">
       <h2 className="text-xl font-semibold mt-6">Projects</h2>
 
       {/* Live Products Section */}
