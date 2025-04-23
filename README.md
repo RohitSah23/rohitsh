@@ -48,7 +48,7 @@ This portfolio is deployed on Vercel. To deploy your own:
 
 ## 📬 Contact
 
-- [![LinkedIn](https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2013.png)](https://www.linkedin.com/in/RohitSah23)
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-RohitSah23-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/RohitSah23)
 - [![GitHub](https://img.shields.io/badge/GitHub-RohitSah23-black?logo=github&logoColor=white)](https://github.com/RohitSah23)
 - [![X](https://img.shields.io/badge/X-RohitSah23-1DA1F2?logo=x&logoColor=white)](https://x.com/RohitSah23)
 - [![Peerlist](https://img.shields.io/badge/Peerlist-RohitSah23-orange?logo=peerlist&logoColor=white)](https://peerlist.io/RohitSah23)
