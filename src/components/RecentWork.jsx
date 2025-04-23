@@ -5,7 +5,7 @@ import swinguilogo from "../assets/UI.webp"
 const recentWorkData = [
   {
     id: 1,
-    title: "Swing UI",
+    title: "Swing UI Library",
     description:
       "Swing UI is a modern, developer-friendly Tailwind CSS component library crafted to help you build beautiful, responsive, and accessible UIs — effortlessly.",
     image:
@@ -14,7 +14,7 @@ const recentWorkData = [
   },
   {
     id: 2,
-    title: "Teadice",
+    title: "TeaDice",
     description:
       "TeaDice is an on-chain dice game where players roll to earn points and mint NFTs, built on Monad Testnet with real-time leaderboards and unlimited gameplay.",
     image:
@@ -39,14 +39,14 @@ const recentWorkData = [
     link: "https://virtualr-pro.vercel.app/",
   },
 
-  {
-    id: 5,
-    title: "Tea Assam RPC",
-    description:
-      "Tea Assam RPC provides a seamless one-click RPC setup for developers interacting with the Tea Protocol’s Assam Test Network blockchain infrastructure efficiently.",
-    image: "https://avatars.githubusercontent.com/u/94703010?s=200&v=4",
-    link: "https://assam-rpc.vercel.app/",
-  },
+  // {
+  //   id: 5,
+  //   title: "Tea Assam RPC",
+  //   description:
+  //     "Tea Assam RPC provides a seamless one-click RPC setup for developers interacting with the Tea Protocol’s Assam Test Network blockchain infrastructure efficiently.",
+  //   image: "https://avatars.githubusercontent.com/u/94703010?s=200&v=4",
+  //   link: "https://assam-rpc.vercel.app/",
+  // },
 ];
 
 const RecentWork = () => {

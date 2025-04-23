@@ -4,7 +4,7 @@ Welcome to my personal portfolio website! This website showcases my projects, sk
 
 ## 🌐 Live Demo
 
-Check out my portfolio here: [Portfolio Website](https://rohitisog.vercel.app/)
+Check out my portfolio here: [Portfolio Website](https://ogrohit.vercel.app/)
 
 ## 📌 Features
 
@@ -48,9 +48,9 @@ This portfolio is deployed on Vercel. To deploy your own:
 
 ## 📬 Contact
 
-- **Twitter**: [@rohitisog](https://x.com/kr_rohitsah)
-- **GitHub**: [@rohitisog](https://github.com/rohitisog)
-- **LinkedIn**: [@rohitisog](https://linkedin.com/in/rohitisog)
+- **Twitter**: [@RohitSah23](https://x.com/RohitSah23)
+- **GitHub**: [@RohitSah23](https://github.com/RohitSah23)
+- **LinkedIn**: [@RohitSah23](https://linkedin.com/in/RohitSah23)
 - **Email**: [rohitisog@gmail.com](mailto\:rohitisog@gmail.com)
 
 ---
