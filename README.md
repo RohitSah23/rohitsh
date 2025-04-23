@@ -23,7 +23,7 @@ Check out my portfolio here: [Portfolio Website](https://ogrohit.vercel.app/)
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/rohitisog/portfolio.git
+   git clone https://github.com/RohitSah23/portfolio.git
    ```
 2. Navigate to the project Folder
    ```sh
