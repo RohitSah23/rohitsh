@@ -81,7 +81,7 @@ const ProjectCard = ({ image, name, live, repo }) => (
 
 const Projects = () => {
   return (
-    <div className="py-8 mt-10">
+    <div className="py-8 ">
       <h2 className="text-2xl font-semibold text-white">Projects</h2>
 
       {/* Live Products Section */}
