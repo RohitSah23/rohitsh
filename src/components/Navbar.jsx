@@ -14,7 +14,7 @@ const Navbar = () => {
         {/* Left: Logo/Name */}
         <NavLink
           to="/"
-          className="text-2xl font-bold text-white tracking-tight hover:text-white/90 transition"
+          className="text-xl sm:text-2xl font-bold text-white tracking-tight hover:text-white/90 transition"
         >
           Rohit Kumar
         </NavLink>
