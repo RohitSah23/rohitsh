@@ -10,8 +10,8 @@ const navLinks = [
 const Navbar = () => {
   return (
     <header className="backdrop-blur-xl bg-white/10 border border-white/10 rounded-2xl shadow-md p-4 md:p-6 mb-6">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        {/* Logo */}
+      <div className="max-w-6xl mx-auto flex justify-between items-center">
+        {/* Left: Logo/Name */}
         <NavLink
           to="/"
           className="text-2xl font-bold text-white tracking-tight hover:text-white/90 transition"
@@ -19,8 +19,8 @@ const Navbar = () => {
           Rohit Kumar
         </NavLink>
 
-        {/* Navigation Links */}
-        <nav className="flex flex-wrap justify-center gap-2 md:gap-4">
+        {/* Right: Navigation Links */}
+        <nav className="flex gap-3 md:gap-4">
           {navLinks.map((link) => (
             <NavLink
               key={link.id}

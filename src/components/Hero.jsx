@@ -35,7 +35,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl py-6 md:p-8 text-white space-y-10">
+    <section className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl py-6 text-white space-y-10">
       <div className="px-4">
         <h2 className="text-2xl font-bold mb-3 text-blue-100">About</h2>
         <p className="text-base md:text-lg text-white/90 leading-relaxed">
