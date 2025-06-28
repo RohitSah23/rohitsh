@@ -14,12 +14,12 @@ const recentWorkData = [
   },
   {
     id: 2,
-    title: "TeaDice",
+    title: "Amplificable",
     description:
-      "TeaDice is an on-chain dice game where players roll to earn points and mint NFTs, built on Monad Testnet with real-time leaderboards and unlimited gameplay.",
+      "Amplificable helps businesses integrate blockchain seamlessly and scale smarter through expert outsourcing services. From consulting to deployment, we provide end-to-end blockchain support across multiple industries",
     image:
-      "https://pbs.twimg.com/profile_images/1708838507957882880/SsQYN3T6_400x400.jpg",
-    link: "https://teadice.vercel.app/",
+      "https://www.amplificable.com/assets/Time-CfSiAhqv.svg",
+    link: "https://www.amplificable.com/",
   },
 
   {
