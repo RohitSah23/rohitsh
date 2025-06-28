@@ -9,31 +9,36 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <div className="bg-white p-8 pt-12 flex justify-center">
-      <div className="w-full max-w-4xl flex justify-between items-center">
-        <NavLink to="/" className="text-2xl text-black font-semibold">
+    <header className="backdrop-blur-xl bg-white/10 border border-white/10 rounded-2xl shadow-md p-4 md:p-6 mb-6">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* Logo */}
+        <NavLink
+          to="/"
+          className="text-2xl font-bold text-white tracking-tight hover:text-white/90 transition"
+        >
           Rohit Kumar
         </NavLink>
 
-        <div>
+        {/* Navigation Links */}
+        <nav className="flex flex-wrap justify-center gap-2 md:gap-4">
           {navLinks.map((link) => (
             <NavLink
               key={link.id}
               to={link.path}
               className={({ isActive }) =>
-                `rounded-2xl sm:text-sm py-1 px-2 md:px-3 ml-1 md:mx-2 transition ${
+                `px-4 py-1.5 rounded-xl text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-black text-white"
-                    : "bg-white text-black  border-black hover:bg-gray-200"
+                    ? "bg-white/10 text-white shadow-inner border border-white/20"
+                    : "text-white/80 hover:text-white hover:bg-white/5"
                 }`
               }
             >
               {link.label}
             </NavLink>
           ))}
-        </div>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 };
 
