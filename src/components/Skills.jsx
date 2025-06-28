@@ -85,7 +85,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <div className="pt-2">
+    <div className="py-6">
       <h2 className="text-2xl font-semibold mb-6">Skills</h2>
       <div className="flex gap-4 flex-wrap">
         {skillsData.map((skill) => (

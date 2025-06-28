@@ -40,7 +40,7 @@ const recentWorkData = [
 
 const RecentWork = () => {
   return (
-    <div className="mt-6">
+    <div className="py-6">
       <h2 className="text-xl font-semibold text-white">Recent Work</h2>
       <div className="flex flex-wrap gap-6 mt-4">
         {recentWorkData.map((project) => (

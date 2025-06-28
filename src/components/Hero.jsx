@@ -35,7 +35,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl p-6 md:p-8 text-white space-y-10">
+    <section className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl py-6 md:p-8 text-white space-y-10">
       <div>
         <h2 className="text-2xl font-bold mb-3 text-blue-100">About</h2>
         <p className="text-base md:text-lg text-white/90 leading-relaxed">
@@ -62,11 +62,14 @@ const Hero = () => {
               className="transition-transform hover:scale-110"
             >
               <div className="p-2 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 shadow-md hover:shadow-lg transition-all">
+               <div className="bg-white rounded-lg p-1 flex items-center justify-center">
+
                 <img
                   src={social.icon}
                   alt="Social Icon"
                   className="w-8 h-8 md:w-10 md:h-10"
-                />
+                  />
+                  </div>
               </div>
             </a>
           ))}
