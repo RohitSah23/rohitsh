@@ -18,7 +18,6 @@ const skillsData = [
     image:
       "https://upload.wikimedia.org/wikipedia/commons/9/98/Solidity_logo.svg",
   },
-
   {
     id: 4,
     name: "Tailwind CSS",
@@ -31,7 +30,6 @@ const skillsData = [
     image:
       "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
   },
-
   {
     id: 6,
     name: "Git & GitHub",
@@ -66,7 +64,6 @@ const skillsData = [
     image:
       "https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg",
   },
-
   {
     id: 12,
     name: "Sass CSS",
@@ -88,19 +85,21 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <div className="p-8">
-      <h2 className="text-2xl font-semibold mb-6">skills</h2>
-      <div className="flex gap-2 flex-wrap">
+    <div className="pt-2">
+      <h2 className="text-2xl font-semibold mb-6">Skills</h2>
+      <div className="flex gap-4 flex-wrap">
         {skillsData.map((skill) => (
           <div
             key={skill.id}
-            className="flex flex-col items-center rounded-2xl p-1 bg-white shadow hover:scale-115 hover:shadow-lg transition"
+            className="rounded-2xl p-2 bg-white/20 backdrop-blur-md border border-white/30 shadow-md transition hover:scale-105"
           >
-            <img
-              src={skill.image}
-              alt={skill.name}
-              className="w-12 h-12 object-contain rounded-2xl"
-            />
+            <div className="bg-white p-2 rounded-xl flex items-center justify-center">
+              <img
+                src={skill.image}
+                alt={skill.name}
+                className="w-8 h-8 object-contain rounded-xl"
+              />
+            </div>
           </div>
         ))}
       </div>
