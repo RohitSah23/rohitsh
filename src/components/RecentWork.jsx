@@ -40,7 +40,7 @@ const recentWorkData = [
 
 const RecentWork = () => {
   return (
-    <div className=" mt-6">
+    <div className="mt-6">
       <h2 className="text-xl font-semibold text-white">Recent Work</h2>
       <div className="flex flex-wrap gap-6 mt-4">
         {recentWorkData.map((project) => (
@@ -70,7 +70,7 @@ const RecentWork = () => {
       <div className="mt-6">
         <Link
           to="/projects"
-          className="text-white/90 hover:underline font-semibold"
+          className="inline-block px-6 py-2 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
         >
           Check other work →
         </Link>
