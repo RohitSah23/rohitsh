@@ -6,31 +6,30 @@ import Blogs from "./components/Blogs";
 import Home from "./components/Home";
 
 const App = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isVerySmallScreen, setIsVerySmallScreen] = useState(false);
 
   useEffect(() => {
-    const checkScreenWidth = () => {
-      setIsSmallScreen(window.innerWidth <= 320);
+    const handleResize = () => {
+      setIsVerySmallScreen(window.innerWidth <= 320);
     };
 
-    checkScreenWidth(); 
-    window.addEventListener("resize", checkScreenWidth);
-
-    return () => window.removeEventListener("resize", checkScreenWidth);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (isSmallScreen) {
+  if (isVerySmallScreen) {
     return (
-      <div className="h-screen flex items-center justify-center text-center p-4 bg-gradient-to-r from-orange-600 to-orange-400">
-        <p className="text-lg font-semibold text-white">
-          🔍 Open this website in mobile view for the best experience! 📱
+      <div className="h-screen w-full flex items-center justify-center text-center px-6 bg-gradient-to-br from-orange-600 to-orange-400 text-white">
+        <p className="text-lg font-medium leading-relaxed">
+          📱 For the best experience, please use a larger screen or landscape mode.
         </p>
       </div>
     );
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto md:max-w-3xl">
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
