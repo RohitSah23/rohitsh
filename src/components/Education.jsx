@@ -29,50 +29,58 @@ const educationData = [
 
 const Education = () => {
   return (
-    <div className="p-6">
-      <h2 className="text-xl font-semibold">Education</h2>
+    <div className="py-6">
+      <h2 className="text-xl font-semibold text-white">Education</h2>
       <div className="mt-4 space-y-4">
         {educationData.map((edu) => (
           <div
             key={edu.id}
-            className="bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-gray-100 hover:shadow-lg"
+            className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-4 shadow-md hover:shadow-lg transition text-white"
           >
             {/* Mobile Layout */}
             <div className="flex flex-col sm:hidden">
               <div className="flex items-center">
-                <img
-                  src={edu.collegeLogo}
-                  alt={`${edu.college} logo`}
-                  className="h-12 w-12 rounded-full shadow-sm"
-                />
+                <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 p-1 flex items-center justify-center">
+                  <div className="w-full h-full bg-white rounded-full p-2 flex items-center justify-center">
+                    <img
+                      src={edu.collegeLogo}
+                      alt={`${edu.college} logo`}
+                      className="w-10 h-10 object-contain rounded-full"
+                    />
+                  </div>
+                </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold">{edu.college}</h3>
-                  <p className="text-sm text-gray-600">{edu.stream}</p>
-                  <p className="text-sm text-gray-500">{edu.date}</p>
-                  <p className="text-sm text-gray-700 font-semibold">
+                  <p className="text-sm text-white/80">{edu.stream}</p>
+                  <p className="text-sm text-white/50">{edu.date}</p>
+                  <p className="text-sm font-semibold text-white mt-1">
                     Percentage: {edu.percentage}
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* MD & LG Layout (Unchanged) */}
+            {/* Desktop Layout */}
             <div className="hidden sm:flex items-center">
-              <img
-                src={edu.collegeLogo}
-                alt={`${edu.college} logo`}
-                className="h-12 w-12 rounded-full shadow-sm transition-transform duration-300 hover:scale-110"
-              />
+              <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 p-1 flex items-center justify-center">
+                <div className="w-full h-full bg-white rounded-full p-2 flex items-center justify-center">
+                  <img
+                    src={edu.collegeLogo}
+                    alt={`${edu.college} logo`}
+                    className="w-10 h-10 object-contain rounded-full"
+                  />
+                </div>
+              </div>
               <div className="w-full px-4">
                 <div className="flex justify-between items-center">
                   <div>
                     <h3 className="text-lg font-semibold">{edu.college}</h3>
-                    <p className="text-sm text-gray-600">{edu.stream}</p>
+                    <p className="text-sm text-white/80">{edu.stream}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-gray-500">{edu.date}</p>
-                    <p className="text-sm mt-1 text-gray-700">
-                      <span className="font-semibold">Percentage:</span> {edu.percentage}
+                    <p className="text-sm text-white/50">{edu.date}</p>
+                    <p className="text-sm mt-1 text-white/80 font-semibold">
+                      Percentage: {edu.percentage}
                     </p>
                   </div>
                 </div>
