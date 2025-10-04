@@ -1,62 +1,36 @@
-# 🚀 Rohit's Portfolio Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Welcome to my personal portfolio website! This website showcases my projects, skills, and experience in blockchain development, web development, and crypto research.
+## Getting Started
 
-## 🌐 Live Demo
+First, run the development server:
 
-Check out my portfolio here: [Portfolio Website](https://rohitsah23.vercel.app/)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## 📌 Features
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Fully responsive and mobile-friendly design
-- Showcases my latest projects and GitHub repositories
-- Interactive UI with smooth animations
-- Dark mode/light mode toggle
-- Contact section with social media links
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 🛠️ Tech Stack
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **Frontend**: React, Tailwind CSS
-- **Deployment**: Vercel
+## Learn More
 
-## 🏗️ Installation & Setup
+To learn more about Next.js, take a look at the following resources:
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/RohitSah23/portfolio.git
-   ```
-2. Navigate to the project Folder
-   ```sh
-   cd portfolio
-   ```
-3. Install dependencies:
-   ```sh
-   npm install
-   ```
-4. Start the development server:
-   ```sh
-   npm run dev
-   ```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 🚀 Deployment
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-This portfolio is deployed on Vercel. To deploy your own:
+## Deploy on Vercel
 
-1. Create an account on [Vercel](https://vercel.com/).
-2. Connect your GitHub repository.
-3. Deploy with a single click!
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## 📬 Contact
-
-- [![LinkedIn](https://img.shields.io/badge/LinkedIn-RohitSah23-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/RohitSah23)
-- [![GitHub](https://img.shields.io/badge/GitHub-RohitSah23-black?logo=github&logoColor=white)](https://github.com/RohitSah23)
-- [![X](https://img.shields.io/badge/X-RohitSah23-1DA1F2?logo=x&logoColor=white)](https://x.com/RohitSah23)
-- [![Peerlist](https://img.shields.io/badge/Peerlist-RohitSah23-orange?logo=peerlist&logoColor=white)](https://peerlist.io/RohitSah23)
-- [![Telegram](https://img.shields.io/badge/Telegram-RohitSah23-0088cc?logo=telegram&logoColor=white)](https://t.me/RohitSah23)
-- [![Discord](https://img.shields.io/badge/Discord-RohitSah23-7289da?logo=discord&logoColor=white)](https://discord.com/users/RohitSah23)
-- [![Email](https://img.shields.io/badge/Email-rohitisog%40gmail.com-blue?logo=gmail&logoColor=white)](mailto:rohitisog@gmail.com)
-
-Feel free to connect, collaborate, or ask any questions you may have!
-
-Made with ❤️ by Rohit 🚀
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
