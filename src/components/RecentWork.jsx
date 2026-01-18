@@ -60,7 +60,7 @@ const RecentWork = () => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-100 p-4 rounded-xl border border-gray-300 hover:shadow-lg transition md:w-[48%] min-w-[250px]"
+            className="bg-white p-4 rounded-xl border border-neutral-300/50 hover:shadow-lg transition md:w-[48%] min-w-[250px]"
           >
             <div className="flex items-center gap-4">
               <img
