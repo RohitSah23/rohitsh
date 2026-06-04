@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router";
-import swinguilogo from "../assets/UI.webp"
+import swinguilogo from "../assets/UI.webp";
+import bitnauticLogo from "../assets/bitnautic.jpeg";
+import lagomchainLogo from "../assets/lagomchain.jpeg";
+import slayLogo from "../assets/slay.png";
 
 const recentWorkData = [
   {
@@ -24,11 +27,27 @@ const recentWorkData = [
 
   {
     id: 3,
-    title: "CoinTok",
+    title: "LagomChain",
     description:
-      "CoinTok is a TikTok-style crypto price tracker with infinite scrolling and real-time market updates, powered by the CoinGecko API for accurate data.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png",
-    link: "https://cointok.vercel.app/",
+      "LagomChain is an EVM-compatible Layer 1 blockchain for real-world asset tokenization, helping Web2 enterprises adopt Web3 through white-label modules, enterprise-grade security, and end-to-end integration support.",
+    image: lagomchainLogo,
+    link: "https://lagomchain.com/",
+  },
+  {
+    id: 4,
+    title: "SLAY Social",
+    description:
+      "SLAY (Singh's Loyalty & Asset Yield) is a blockchain-based social platform where every post, like, and comment earns measurable token value—returning ownership and rewards to creators instead of opaque algorithms.",
+    image: slayLogo,
+    link: "https://slayspace.io/",
+  },
+  {
+    id: 5,
+    title: "BitNautic",
+    description:
+      "BitNautic is a supply chain platform enabling producers, retailers, shippers, and carriers to manage global logistics securely—via BTNT Enterprise, BTNT Transport, and BTNT Docs, with sustainability, traceability, and transparency at every step.",
+    image: bitnauticLogo,
+    link: "https://bitnautic.com/",
   },
   {
     id: 4,

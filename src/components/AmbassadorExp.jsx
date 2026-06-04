@@ -5,7 +5,7 @@ const experienceData = [
     id: 1,
     company: "Spheron Foundation",
     role: "Ambassador (Officer Level - 2)",
-    date: "Nov 2024 - Present",
+    date: "Dec 2024 - May 2025",
     description:
       "Building and growing the developer community, advocating Spheron's decentralized infrastructure solutions, and creating educational content to drive adoption.",
     image:

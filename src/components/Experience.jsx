@@ -1,39 +1,28 @@
 import React from "react";
 import ant from "../assets/antier.png";
 import alp from "../assets/alephium.png";
+import ariabatixLogo from "../assets/ariabatixlabs.jpeg";
 
 const experienceData = [
   {
     id: 5,
     company: "Ariabatix Labs",
     role: "Full Stack Blockchain Developer",
-    date: "Sept 2025 - Present",
+    date: "March 2025 - Present",
     location: "Remote, UK",
     type: "Full Time",
     points: [
-      "Leading development of core blockchain infrastructure and decentralized applications.",
-      "Architecting scalable full-stack solutions with a focus on performance and security.",
-      "Collaborating with global teams to push boundaries in Web3 and AI integration."
+      "Leading development of core blockchain infrastructure and decentralized applications, including high-throughput layers for optimized transactions.",
+      "Architecting scalable full-stack solutions and end-to-end dApps integrating complex smart contract logic with modern frontends.",
+      "Ensuring performance, reliability and security through rigorous testing and security audits.",
+      "Collaborating with global teams to push boundaries in Web3 and AI integration.",
+      "Driving developer adoption by creating educational content and supporting ecosystem growth."
     ],
-    skills: ["Full Stack", "Blockchain", "Next.js", "Ethereum"],
-    image: "https://via.placeholder.com/150", 
-    hideDetails: true
+    skills: ["Full Stack", "Blockchain", "Next.js", "Ethereum", "Solidity", "React", "Node.js"],
+    image: ariabatixLogo,
+    hideDetails: false
   },
-  {
-    id: 4,
-    company: "Lagom Chain",
-    role: "Full Stack Blockchain Developer",
-    date: "March 2025 - August 2025",
-    location: "Remote, UK",
-    type: "Full Time",
-    points: [
-      "Designed and implemented high-throughput blockchain layers for optimized transactions.",
-      "Built end-to-end dApps integrating complex smart contract logic with modern frontends.",
-      "Ensured system reliability through rigorous testing and security audits."
-    ],
-    skills: ["Blockchain Lore", "Solidity", "React", "Node.js"],
-    image: "https://www.lagomchain.com/assets/FavLogo-uw-Nyzdm.png",
-  },
+  
   {
     id: 1,
     company: "Alephium India",

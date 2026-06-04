@@ -2,6 +2,14 @@ import React from "react";
 
 const educationData = [
   {
+    id: 4,
+    college: "Chandigarh University, Mohali",
+    stream: "MCA - Master of Computer Applications",
+    date: "June 2025 - May 2027",
+    cgpa: "9",
+    collegeLogo: "https://cdn.theorg.com/310dcd3f-46f1-495e-801a-258eea62e72e_thumb.jpg",
+  },
+  {
     id: 1,
     college: "DAV College Jalandhar, Punjab",
     stream: "BCA - Bachelors of Computer Applications",
@@ -49,9 +57,11 @@ const Education = () => {
                   <h3 className="text-lg font-semibold">{edu.college}</h3>
                   <p className="text-sm text-gray-600">{edu.stream}</p>
                   <p className="text-sm text-gray-500">{edu.date}</p>
-                  <p className="text-sm text-gray-700 font-semibold">
-                    Percentage: {edu.percentage}
-                  </p>
+                  {edu.cgpa ? (
+                    <p className="text-sm text-gray-700 font-semibold">CGPA: {edu.cgpa}</p>
+                  ) : (
+                    <p className="text-sm text-gray-700 font-semibold">Percentage: {edu.percentage}</p>
+                  )}
                 </div>
               </div>
             </div>
@@ -71,9 +81,15 @@ const Education = () => {
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-gray-500">{edu.date}</p>
-                    <p className="text-sm mt-1 text-gray-700">
-                      <span className="font-semibold">Percentage:</span> {edu.percentage}
-                    </p>
+                    {edu.cgpa ? (
+                      <p className="text-sm mt-1 text-gray-700">
+                        <span className="font-semibold">CGPA:</span> {edu.cgpa}
+                      </p>
+                    ) : (
+                      <p className="text-sm mt-1 text-gray-700">
+                        <span className="font-semibold">Percentage:</span> {edu.percentage}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

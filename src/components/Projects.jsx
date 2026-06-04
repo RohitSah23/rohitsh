@@ -2,7 +2,6 @@ import React from "react";
 import tea from "../assets/tea.png";
 import zerodha from "../assets/zerodha.png";
 import npm from "../assets/npm.png";
-import cointok from "../assets/cointok.png";
 import virtual from "../assets/virtual.png";
 import nftg from "../assets/nftg.png";
 import swinguilogo from "../assets/UI.webp";
@@ -14,6 +13,13 @@ const liveProducts = [
     image: swinguilogo,
     live: "https://swingui.com",
     repo: "https://github.com/RohitSah23/SwingUI",
+  },
+  {
+    id: 2,
+    name: "Arbancia",
+    image: "https://via.placeholder.com/600x400?text=Arbancia",
+    live: "https://arbancia.com",
+    repo: "",
   },
 ];
 
@@ -42,14 +48,6 @@ const landingPages = [
 ];
 
 const otherProjects = [
-  {
-    id: 5,
-    name: "Play teadice",
-    live: "https://teadice.vercel.app/",
-    repo: "https://github.com/RohitSah23/teadice",
-    image:
-      "https://pbs.twimg.com/profile_images/1708838507957882880/SsQYN3T6_400x400.jpg",
-  },
   {
     id: 6,
     name: "NFTGalaxy Marketplace",
