@@ -1,10 +1,11 @@
 import React from "react";
-import tea from "../assets/tea.png";
-import zerodha from "../assets/zerodha.png";
-import npm from "../assets/npm.png";
 import virtual from "../assets/virtual.png";
-import nftg from "../assets/nftg.png";
 import swinguilogo from "../assets/UI.webp";
+import arbanciaLogo from "../assets/arbancia.png";
+import bitnauticLogo from "../assets/bitnautic.jpeg";
+import lagomchainLogo from "../assets/lagomchain.jpeg";
+import nirvairLogo from "../assets/nirvair.png";
+import slayLogo from "../assets/slay.png";
 
 const liveProducts = [
   {
@@ -17,7 +18,7 @@ const liveProducts = [
   {
     id: 2,
     name: "Arbancia",
-    image: "https://via.placeholder.com/600x400?text=Arbancia",
+    image: arbanciaLogo,
     live: "https://arbancia.com",
     repo: "",
   },
@@ -25,44 +26,50 @@ const liveProducts = [
 
 const landingPages = [
   {
-    id: 2,
-    name: "Zerodha Landing Page",
-    live: "https://zerodha-og.vercel.app/",
-    repo: "https://github.com/RohitSah23/zerodha-landing-page",
-    image: zerodha,
-  },
-  {
-    id: 3,
-    name: "NPM Landing Page",
-    live: "https://npm-og.vercel.app/",
-    repo: "https://github.com/RohitSah23/npm-landing-page",
-    image: npm,
-  },
-  {
-    id: 4,
+    id: 1,
     name: "VirtualR Landing Page",
     live: "https://virtualr-pro.vercel.app/",
     repo: "https://github.com/RohitSah23/virtualR",
     image: virtual,
   },
+  {
+    id: 2,
+    name: "Amplificable",
+    live: "https://www.amplificable.com/",
+    repo: "",
+    image: "https://www.amplificable.com/assets/Time-CfSiAhqv.svg",
+  },
+  {
+    id: 3,
+    name: "Nirvair Ethereal",
+    live: "https://nirvairethereal.vercel.app/",
+    repo: "",
+    image: nirvairLogo,
+  },
 ];
 
 const otherProjects = [
   {
-    id: 6,
-    name: "NFTGalaxy Marketplace",
-    live: "https://nftgalaxy.vercel.app/",
-    repo: "https://github.com/RohitSah23/nftgalaxy",
-    image: nftg,
+    id: 1,
+    name: "LagomChain",
+    live: "https://lagomchain.com/",
+    repo: "",
+    image: lagomchainLogo,
   },
-  // {
-  //   id: 9,
-  //   name: "Play Monadice",
-  //   live: "https://monadice.vercel.app/",
-  //   repo: "https://github.com/RohitSah23/monadice",
-  //   image:
-  //     "https://cdn.prod.website-files.com/667c57e6f9254a4b6d914440/667d7104644c621965495f6e_LogoMark.svg",
-  // },
+  {
+    id: 2,
+    name: "BitNautic",
+    live: "https://bitnautic.com/",
+    repo: "",
+    image: bitnauticLogo,
+  },
+  {
+    id: 3,
+    name: "SLAY Social",
+    live: "https://slayspace.io/",
+    repo: "",
+    image: slayLogo,
+  },
 ];
 
 const Projects = () => {
@@ -93,14 +100,16 @@ const Projects = () => {
               >
                 Live Demo
               </a>
-              <a
-                href={product.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-2xl sm:text-sm px-3 py-1 transition border border-black bg-white text-black hover:bg-black hover:text-white"
-              >
-                GitHub Repo
-              </a>
+              {product.repo && (
+                <a
+                  href={product.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-2xl sm:text-sm px-3 py-1 transition border border-black bg-white text-black hover:bg-black hover:text-white"
+                >
+                  GitHub Repo
+                </a>
+              )}
             </div>
           </div>
         ))}
@@ -129,14 +138,16 @@ const Projects = () => {
               >
                 Live Demo
               </a>
-              <a
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-2xl sm:text-sm px-3 py-1 transition border border-black bg-white text-black hover:bg-black hover:text-white"
-              >
-                GitHub Repo
-              </a>
+              {project.repo && (
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-2xl sm:text-sm px-3 py-1 transition border border-black bg-white text-black hover:bg-black hover:text-white"
+                >
+                  GitHub Repo
+                </a>
+              )}
             </div>
           </div>
         ))}
@@ -165,14 +176,16 @@ const Projects = () => {
               >
                 Live Demo
               </a>
-              <a
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-2xl sm:text-sm px-3 py-1 transition border border-black bg-white text-black hover:bg-black hover:text-white"
-              >
-                GitHub Repo
-              </a>
+              {project.repo && (
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-2xl sm:text-sm px-3 py-1 transition border border-black bg-white text-black hover:bg-black hover:text-white"
+                >
+                  GitHub Repo
+                </a>
+              )}
             </div>
           </div>
         ))}

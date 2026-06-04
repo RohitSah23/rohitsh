@@ -1,95 +1,86 @@
 import React from "react";
 import { Link } from "react-router";
 import swinguilogo from "../assets/UI.webp";
-import bitnauticLogo from "../assets/bitnautic.jpeg";
 import lagomchainLogo from "../assets/lagomchain.jpeg";
 import slayLogo from "../assets/slay.png";
+import arbanciaLogo from "../assets/arbancia.png";
+import nirvairLogo from "../assets/nirvair.png";
 
 const recentWorkData = [
   {
     id: 1,
-    title: "Swing UI Library",
+    title: "Swing UI",
     description:
-      "Swing UI is a modern, developer-friendly Tailwind CSS component library crafted to help you build beautiful, responsive, and accessible UIs — effortlessly.",
-    image:
-      swinguilogo,
+      "A modern Tailwind CSS component library for building responsive, accessible interfaces with developer-friendly APIs and polished design defaults.",
+    image: swinguilogo,
     link: "https://swingui.com",
   },
   {
     id: 2,
-    title: "Amplificable",
-    description:
-      "Amplificable helps businesses integrate blockchain seamlessly and scale smarter through expert outsourcing services. From consulting to deployment, we provide end-to-end blockchain support across multiple industries",
-    image:
-      "https://www.amplificable.com/assets/Time-CfSiAhqv.svg",
-    link: "https://www.amplificable.com/",
-  },
-
-  {
-    id: 3,
     title: "LagomChain",
     description:
-      "LagomChain is an EVM-compatible Layer 1 blockchain for real-world asset tokenization, helping Web2 enterprises adopt Web3 through white-label modules, enterprise-grade security, and end-to-end integration support.",
+      "An EVM-compatible Layer 1 blockchain for real-world asset tokenization, with white-label Web3 modules and enterprise-grade security for global businesses.",
     image: lagomchainLogo,
     link: "https://lagomchain.com/",
+  },
+  {
+    id: 3,
+    title: "Amplificable",
+    description:
+      "Blockchain consulting and outsourcing from strategy to deployment—helping teams adopt Web3, scale faster, and ship production-ready solutions across industries.",
+    image: "https://www.amplificable.com/assets/Time-CfSiAhqv.svg",
+    link: "https://www.amplificable.com/",
   },
   {
     id: 4,
     title: "SLAY Social",
     description:
-      "SLAY (Singh's Loyalty & Asset Yield) is a blockchain-based social platform where every post, like, and comment earns measurable token value—returning ownership and rewards to creators instead of opaque algorithms.",
+      "A blockchain social platform where posts, likes, and comments earn token rewards—giving creators ownership of their content, influence, and community value.",
     image: slayLogo,
     link: "https://slayspace.io/",
   },
   {
     id: 5,
-    title: "BitNautic",
+    title: "Arbancia",
     description:
-      "BitNautic is a supply chain platform enabling producers, retailers, shippers, and carriers to manage global logistics securely—via BTNT Enterprise, BTNT Transport, and BTNT Docs, with sustainability, traceability, and transparency at every step.",
-    image: bitnauticLogo,
-    link: "https://bitnautic.com/",
+      "A premium lifestyle brand offering curated fragrance and jewelry—defined by elegance, timeless design, and a secure luxury shopping experience for every customer.",
+    image: arbanciaLogo,
+    link: "https://arbancia.com",
   },
   {
-    id: 4,
-    title: "VirtualR",
+    id: 6,
+    title: "Nirvair Ethereal",
     description:
-      "VirtualR is a next-gen VR landing page with immersive visuals, sleek design, and interactive elements to showcase futuristic virtual reality experiences effortlessly.",
-    image: "https://virtualr-pro.vercel.app/assets/logo-6TE5HpCe.png",
-    link: "https://virtualr-pro.vercel.app/",
+      "Faith-driven streetwear and luxury accessories—premium oversized apparel, jewellery, and watches with custom printing and pan-India delivery nationwide.",
+    image: nirvairLogo,
+    link: "https://nirvairethereal.vercel.app/",
   },
-
-  // {
-  //   id: 5,
-  //   title: "Tea Assam RPC",
-  //   description:
-  //     "Tea Assam RPC provides a seamless one-click RPC setup for developers interacting with the Tea Protocol’s Assam Test Network blockchain infrastructure efficiently.",
-  //   image: "https://avatars.githubusercontent.com/u/94703010?s=200&v=4",
-  //   link: "https://assam-rpc.vercel.app/",
-  // },
 ];
 
 const RecentWork = () => {
   return (
     <div className="px-8 mt-6">
-      <h2 className="text-xl font-semibold">Recent Work</h2>
-      <div className="flex flex-wrap gap-6 mt-4">
+      <h2 className="text-xl font-semibold">Projects</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
         {recentWorkData.map((project) => (
           <a
             key={project.id}
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white p-4 rounded-xl border border-neutral-300/50 hover:shadow-lg transition md:w-[48%] min-w-[250px]"
+            className="flex flex-col h-full bg-white p-4 rounded-xl border border-neutral-300/50 hover:shadow-lg transition"
           >
             <div className="flex items-center gap-4">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-12 h-12 rounded-full object-cover"
+                className="w-12 h-12 shrink-0 rounded-full object-cover"
               />
               <h3 className="text-lg font-bold">{project.title}</h3>
             </div>
-            <p className="mt-2 text-gray-600">{project.description}</p>
+            <p className="mt-3 text-sm text-gray-600 leading-relaxed line-clamp-3 min-h-[4.5rem]">
+              {project.description}
+            </p>
           </a>
         ))}
       </div>

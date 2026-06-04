@@ -11,12 +11,12 @@ const Hero = () => {
     {
       id: 1,
       icon: x,
-      link: "https://www.x.com/RohitSah23",
+      link: "https://x.com/rohitisog",
     },
     {
       id: 2,
       icon: linkedin,
-      link: "https://www.linkedin.com/in/RohitSah23",
+      link: "https://www.linkedin.com/in/rohitisog/",
     },
     {
       id: 3,
@@ -40,14 +40,9 @@ const Hero = () => {
       <div>
         <h2 className="text-xl font-semibold">About</h2>
         <p className="my-4 text-lg text-gray-800">
-          Blockchain Developer from India with expertise in creating, deploying,
-          and managing blockchain solutions. Skilled in frontend & backend 
-          development, developer training, and community engagement.
-        </p>
-        <p className="text-lg text-gray-800">
-          Passionate about building high-performance products with seamless user
-          experiences, solving complex problems, and pushing the boundaries of
-          technology. Always learning, always innovating.
+          Full Stack Blockchain Engineer passionate about building SaaS products, developer
+          tools, and blockchain applications. Focused on solving real-world
+          problems through scalable technology and exceptional user experiences.
         </p>
       </div>
       <div>
