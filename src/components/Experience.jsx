@@ -1,14 +1,14 @@
 import React from "react";
 import ant from "../assets/antier.png";
 import alp from "../assets/alephium.png";
-import ariabatixLogo from "../assets/ariabatixlabs.jpeg";
+import singhcoinLogo from "../assets/singhcoin.png";
 
 const experienceData = [
   {
     id: 5,
-    company: "Ariabatix Labs",
+    company: "Singhcoin Ltd",
     role: "Full Stack Blockchain Developer",
-    date: "March 2025 - Present",
+    date: "Jan 2025 - Present",
     location: "Remote, UK",
     type: "Full Time",
     points: [
@@ -19,7 +19,7 @@ const experienceData = [
       "Driving developer adoption by creating educational content and supporting ecosystem growth."
     ],
     skills: ["Full Stack", "Blockchain", "Next.js", "Ethereum", "Solidity", "React", "Node.js"],
-    image: ariabatixLogo,
+    image: singhcoinLogo,
     hideDetails: false
   },
   
