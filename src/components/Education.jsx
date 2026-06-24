@@ -14,7 +14,7 @@ const educationData = [
     college: "DAV College Jalandhar, Punjab",
     stream: "BCA - Bachelors of Computer Applications",
     date: "Aug 2020 - May 2023",
-    percentage: "79.79%",
+    percentage: "77.41%",
     collegeLogo: "https://www.davjalandhar.com/wp-content/uploads/2022/07/logo-512x512-1.png",
   },
   {

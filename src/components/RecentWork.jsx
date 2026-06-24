@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router";
 import swinguilogo from "../assets/UI.webp";
 import lagomchainLogo from "../assets/lagomchain.jpeg";
-import slayLogo from "../assets/slay.png";
 
 
 const recentWorkData = [
@@ -21,14 +20,6 @@ const recentWorkData = [
       "An EVM-compatible Layer 1 blockchain for real-world asset tokenization, with white-label Web3 modules and enterprise-grade security for global businesses.",
     image: lagomchainLogo,
     link: "https://lagomchain.com/",
-  },
-  {
-    id: 4,
-    title: "SLAY Social",
-    description:
-      "A blockchain social platform where posts, likes, and comments earn token rewards—giving creators ownership of their content, influence, and community value.",
-    image: slayLogo,
-    link: "https://slayspace.io/",
   },
 ];
 

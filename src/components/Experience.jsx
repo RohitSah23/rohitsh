@@ -106,7 +106,7 @@ const Experience = () => {
               <div className="flex items-start gap-4">
                 {/* Company Logo */}
                 <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-50 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                   <img
                     src={exp.image}
                     alt={exp.company}
@@ -155,7 +155,7 @@ const Experience = () => {
             {/* Products & Client Sites */}
             {exp.products && (
               <div className="mt-5">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Products & Platforms</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Web3 Platforms & Tools</p>
                 <div className="flex flex-wrap gap-2">
                   {exp.products.map((p) =>
                     p.url ? (
@@ -175,7 +175,7 @@ const Experience = () => {
             )}
             {exp.clientSites && (
               <div className="mt-4">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Client Websites</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Landing Pages & UI/UX</p>
                 <div className="flex flex-wrap gap-2">
                   {exp.clientSites.map((s) => (
                     <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer"
