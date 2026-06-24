@@ -159,7 +159,7 @@ const ProjectCard = ({ project }) => {
 const Projects = () => {
   useDocumentMetadata({
     title: "Projects | Rohit Kumar - Frontend-focused Software Engineer",
-    description: "Showcase of frontend engineering projects, SaaS platforms, Web3 tools, and responsive landing pages built by Rohit Kumar.",
+    description: "Showcase of frontend projects, SaaS platforms, and responsive landing pages built by Rohit Kumar.",
     url: "https://www.rohitisog.com/projects",
     keywords: "Projects, Portfolio, Frontend Projects, React Projects, Web3 Apps, SaaS, Landing Pages"
   });
