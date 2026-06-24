@@ -1,4 +1,5 @@
 import React from "react";
+import useDocumentMetadata from "../hooks/useDocumentMetadata";
 
 
 
@@ -156,6 +157,13 @@ const ProjectCard = ({ project }) => {
 };
 
 const Projects = () => {
+  useDocumentMetadata({
+    title: "Projects | Rohit Kumar - Frontend-focused Software Engineer",
+    description: "Showcase of frontend engineering projects, SaaS platforms, Web3 tools, and responsive landing pages built by Rohit Kumar.",
+    url: "https://www.rohitisog.com/projects",
+    keywords: "Projects, Portfolio, Frontend Projects, React Projects, Web3 Apps, SaaS, Landing Pages"
+  });
+
   return (
     <div className="px-8 pb-16">
       <h2 className="text-xl font-semibold">Projects</h2>

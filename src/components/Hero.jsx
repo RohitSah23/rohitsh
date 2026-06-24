@@ -46,7 +46,7 @@ const Hero = () => {
       <div>
         <h2 className="text-xl font-semibold">About</h2>
         <p className="my-4 text-lg text-gray-800">
-          Frontend Engineer with 1.5+ years of experience building scalable
+          Frontend-focused Software Engineer with 1.5+ years of experience building scalable
           React, Next.js, and TypeScript applications. Delivered production-ready
           Web2 and Web3 products used across Social, SaaS, RWA, and Blockchain
           domains. Passionate about creating fast, accessible, and user-centric
