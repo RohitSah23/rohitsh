@@ -3,8 +3,7 @@ import { Link } from "react-router";
 import swinguilogo from "../assets/UI.webp";
 import lagomchainLogo from "../assets/lagomchain.jpeg";
 import slayLogo from "../assets/slay.png";
-import arbanciaLogo from "../assets/arbancia.png";
-import nirvairLogo from "../assets/nirvair.png";
+
 
 const recentWorkData = [
   {
@@ -24,36 +23,12 @@ const recentWorkData = [
     link: "https://lagomchain.com/",
   },
   {
-    id: 3,
-    title: "Amplificable",
-    description:
-      "Blockchain consulting and outsourcing from strategy to deployment—helping teams adopt Web3, scale faster, and ship production-ready solutions across industries.",
-    image: "https://www.amplificable.com/assets/Time-CfSiAhqv.svg",
-    link: "https://www.amplificable.com/",
-  },
-  {
     id: 4,
     title: "SLAY Social",
     description:
       "A blockchain social platform where posts, likes, and comments earn token rewards—giving creators ownership of their content, influence, and community value.",
     image: slayLogo,
     link: "https://slayspace.io/",
-  },
-  {
-    id: 5,
-    title: "Arbancia",
-    description:
-      "A premium lifestyle brand offering curated fragrance and jewelry—defined by elegance, timeless design, and a secure luxury shopping experience for every customer.",
-    image: arbanciaLogo,
-    link: "https://arbancia.com",
-  },
-  {
-    id: 6,
-    title: "Nirvair Ethereal",
-    description:
-      "Faith-driven streetwear and luxury accessories—premium oversized apparel, jewellery, and watches with custom printing and pan-India delivery nationwide.",
-    image: nirvairLogo,
-    link: "https://nirvairethereal.vercel.app/",
   },
 ];
 
@@ -78,7 +53,7 @@ const RecentWork = () => {
               />
               <h3 className="text-lg font-bold">{project.title}</h3>
             </div>
-            <p className="mt-3 text-sm text-gray-600 leading-relaxed line-clamp-3 min-h-[4.5rem]">
+            <p className="mt-3 text-sm text-gray-600 leading-relaxed">
               {project.description}
             </p>
           </a>

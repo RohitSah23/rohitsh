@@ -7,18 +7,34 @@ const experienceData = [
   {
     id: 5,
     company: "Singhcoin Ltd",
-    role: "Full Stack Blockchain Developer",
+    role: "Software Engineer",
     date: "Jan 2025 - Present",
-    location: "Remote, UK",
+    location: "Remote, London, UK",
     type: "Full Time",
     points: [
-      "Leading development of core blockchain infrastructure and decentralized applications, including high-throughput layers for optimized transactions.",
-      "Architecting scalable full-stack solutions and end-to-end dApps integrating complex smart contract logic with modern frontends.",
-      "Ensuring performance, reliability and security through rigorous testing and security audits.",
-      "Collaborating with global teams to push boundaries in Web3 and AI integration.",
-      "Driving developer adoption by creating educational content and supporting ecosystem growth."
+      "Developed and shipped production-ready frontend applications, dashboards, landing pages, and platform features using React.js, Next.js, TypeScript, and Tailwind CSS.",
+      "Delivered Web2 and Web3 products including Mintellect, Uthaan RWA, Bitnautic, Nomtree Recipe Social Media Platform, and Slay Merchant Panel; while also building client-facing platforms including Lagom Chain, Slay Space, BranchOutCo, Mintellect, and Leivia Salon.",
+      "Built reusable component systems, responsive user interfaces, and scalable frontend architecture using React.js, Next.js, TypeScript, and Tailwind CSS.",
+      "Optimized frontend performance through code splitting, lazy loading, image optimization, and efficient component rendering.",
+      "Integrated REST APIs, authentication systems, role-based access control, and blockchain functionality including wallet connectivity and Ethers.js interactions.",
+      "Collaborated with and mentored junior developers through code reviews, knowledge sharing, technical guidance, and development best practices.",
+      "Assisted in onboarding and mentoring interns through task planning, code reviews, and technical guidance."
     ],
-    skills: ["Full Stack", "Blockchain", "Next.js", "Ethereum", "Solidity", "React", "Node.js"],
+    products: [
+      { name: "Nomtree Recipe", url: null },
+      { name: "Slay Merchant Panel", url: null },
+      { name: "Mintellect", url: "https://mintellect-ten.vercel.app/" },
+      { name: "Uthaan RWA", url: "https://uthaan-rwa.vercel.app/" },
+      { name: "Bitnautic", url: "https://bitnautic.vercel.app/" },
+    ],
+    clientSites: [
+      { name: "Lagom Chain", url: "https://lagomchain.com/" },
+      { name: "Slay Space", url: "https://slayspace.io/" },
+      { name: "Mintellect", url: "https://www.mintellect.org/" },
+      { name: "BranchOutCo", url: "https://www.branchoutco.com/" },
+      { name: "Leivia Salon", url: "https://leivia-salon.vercel.app/" },
+    ],
+    skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Ethers.js", "REST APIs", "Web3"],
     image: singhcoinLogo,
     hideDetails: false
   },
@@ -30,6 +46,7 @@ const experienceData = [
     date: "Aug 2024 - Sept 2024",
     location: "India - Remote",
     type: "Full Time",
+    hidden: true,
     points: [
       "Driving developer relations, fostering a strong blockchain community.",
       "Creating educational content to enhance Alephium’s adoption across India.",
@@ -45,6 +62,7 @@ const experienceData = [
     date: "Jan 2024 - May 2024",
     location: "Mohali, India",
     type: "Internship",
+    hidden: true,
     points: [
       "Developed blockchain-based solutions and integrated Web3 functionalities.",
       "Mentored trainees and conducted workshops to upskill developers in blockchain.",
@@ -65,7 +83,7 @@ const experienceData = [
       "Contributed to NFT marketplace development and internal blockchain tools.",
       "Learned industry best practices for secure smart contract coding."
     ],
-    skills: ["Smart Contracts", "DeFi", "Web3.js", "Truffle"],
+    skills: ["Solidity", "Ethers.js", "Hardhat", "DeFi", "Smart Contracts"],
     image: ant,
   },
 ];
@@ -78,7 +96,7 @@ const Experience = () => {
       </h2>
       
       <div className="space-y-12">
-        {experienceData.map((exp) => (
+        {experienceData.filter((exp) => !exp.hidden).map((exp) => (
           <div
             key={exp.id}
             className="group relative transition-all duration-300"
@@ -133,6 +151,41 @@ const Experience = () => {
                 </li>
               ))}
             </ul>
+
+            {/* Products & Client Sites */}
+            {exp.products && (
+              <div className="mt-5">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Products & Platforms</p>
+                <div className="flex flex-wrap gap-2">
+                  {exp.products.map((p) =>
+                    p.url ? (
+                      <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
+                        className="px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors">
+                        ↗ {p.name}
+                      </a>
+                    ) : (
+                      <span key={p.name}
+                        className="px-3 py-1 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-md">
+                        🔒 {p.name}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+            )}
+            {exp.clientSites && (
+              <div className="mt-4">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Client Websites</p>
+                <div className="flex flex-wrap gap-2">
+                  {exp.clientSites.map((s) => (
+                    <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer"
+                      className="px-3 py-1 text-xs font-medium text-purple-600 bg-purple-50 border border-purple-200 rounded-md hover:bg-purple-100 transition-colors">
+                      ↗ {s.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Tech Stack Tags */}
             <div className="mt-6 flex flex-wrap gap-2">

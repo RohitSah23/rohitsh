@@ -40,9 +40,13 @@ const Hero = () => {
       <div>
         <h2 className="text-xl font-semibold">About</h2>
         <p className="my-4 text-lg text-gray-800">
-          Full Stack Blockchain Engineer passionate about building SaaS products, developer
-          tools, and blockchain applications. Focused on solving real-world
-          problems through scalable technology and exceptional user experiences.
+          Frontend-focused Software Engineer with 1.5+ years of experience
+          building and shipping production-grade Web2 and Web3 applications
+          using React.js, Next.js, TypeScript, and Tailwind CSS. Proven
+          experience delivering scalable user-facing products, integrating APIs
+          and blockchain functionality, and contributing across the full
+          development lifecycle. Built and deployed multiple production platforms
+          spanning social media, SaaS, NFT, and Real World Asset (RWA) domains.
         </p>
       </div>
       <div>

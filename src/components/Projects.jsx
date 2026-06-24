@@ -4,7 +4,6 @@ import swinguilogo from "../assets/UI.webp";
 import arbanciaLogo from "../assets/arbancia.png";
 import bitnauticLogo from "../assets/bitnautic.jpeg";
 import lagomchainLogo from "../assets/lagomchain.jpeg";
-import nirvairLogo from "../assets/nirvair.png";
 import slayLogo from "../assets/slay.png";
 
 const liveProducts = [
@@ -31,20 +30,6 @@ const landingPages = [
     live: "https://virtualr-pro.vercel.app/",
     repo: "https://github.com/RohitSah23/virtualR",
     image: virtual,
-  },
-  {
-    id: 2,
-    name: "Amplificable",
-    live: "https://www.amplificable.com/",
-    repo: "",
-    image: "https://www.amplificable.com/assets/Time-CfSiAhqv.svg",
-  },
-  {
-    id: 3,
-    name: "Nirvair Ethereal",
-    live: "https://nirvairethereal.vercel.app/",
-    repo: "",
-    image: nirvairLogo,
   },
 ];
 
