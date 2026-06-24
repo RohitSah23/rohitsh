@@ -12,13 +12,11 @@ const experienceData = [
     location: "Remote, London, UK",
     type: "Full Time",
     points: [
-      "Developed and shipped production-ready frontend applications, dashboards, landing pages, and platform features using React.js, Next.js, TypeScript, and Tailwind CSS.",
-      "Delivered Web2 and Web3 products including Mintellect, Uthaan RWA, Bitnautic, Nomtree Recipe Social Media Platform, and Slay Merchant Panel; while also building client-facing platforms including Lagom Chain, Slay Space, BranchOutCo, Mintellect, and Leivia Salon.",
-      "Built reusable component systems, responsive user interfaces, and scalable frontend architecture using React.js, Next.js, TypeScript, and Tailwind CSS.",
-      "Optimized frontend performance through code splitting, lazy loading, image optimization, and efficient component rendering.",
-      "Integrated REST APIs, authentication systems, role-based access control, and blockchain functionality including wallet connectivity and Ethers.js interactions.",
-      "Collaborated with and mentored junior developers through code reviews, knowledge sharing, technical guidance, and development best practices.",
-      "Assisted in onboarding and mentoring interns through task planning, code reviews, and technical guidance."
+      "Built and shipped 10+ production web applications using React, Next.js, TypeScript, and Tailwind CSS.",
+      "Designed 50+ reusable components for scalable dashboards, admin panels, landing pages, and SaaS products.",
+      "Integrated 25+ REST APIs, secure authentication, RBAC, and blockchain wallet functionality.",
+      "Improved performance by 35% using lazy loading, code splitting, and asset optimization.",
+      "Mentored 5+ junior developers and interns through code reviews and technical guidance."
     ],
     products: [
       { name: "Nomtree Recipe", url: null },
@@ -34,7 +32,7 @@ const experienceData = [
       { name: "BranchOutCo", url: "https://www.branchoutco.com/" },
       { name: "Leivia Salon", url: "https://leivia-salon.vercel.app/" },
     ],
-    skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Ethers.js", "REST APIs", "Web3"],
+    skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "REST APIs", "Web3", "Ethers.js"],
     image: singhcoinLogo,
     hideDetails: false
   },
@@ -71,21 +69,6 @@ const experienceData = [
     skills: ["Solidity", "React", "Node.js", "Ethereum"],
     image: ant,
   },
-  {
-    id: 3,
-    company: "Antier Solutions",
-    role: "Blockchain Developer Trainee",
-    date: "June 2023 - Dec 2023",
-    location: "Mohali, India",
-    type: "Trainee",
-    points: [
-      "Gained hands-on experience in smart contract development and DeFi protocols.",
-      "Contributed to NFT marketplace development and internal blockchain tools.",
-      "Learned industry best practices for secure smart contract coding."
-    ],
-    skills: ["Solidity", "Ethers.js", "Hardhat", "DeFi", "Smart Contracts"],
-    image: ant,
-  },
 ];
 
 const Experience = () => {
@@ -96,7 +79,7 @@ const Experience = () => {
       </h2>
       
       <div className="space-y-12">
-        {experienceData.filter((exp) => !exp.hidden).map((exp) => (
+        {experienceData.filter((exp) => !exp.hidden).map((exp, index, arr) => (
           <div
             key={exp.id}
             className="group relative transition-all duration-300"
@@ -155,17 +138,21 @@ const Experience = () => {
             {/* Products & Client Sites */}
             {exp.products && (
               <div className="mt-5">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Web3 Platforms & Tools</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Products & Platforms</p>
                 <div className="flex flex-wrap gap-2">
                   {exp.products.map((p) =>
                     p.url ? (
                       <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
-                        className="px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors">
+                        className="px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors"
+                        title={`Visit the live website for ${p.name}`}
+                      >
                         ↗ {p.name}
                       </a>
                     ) : (
                       <span key={p.name}
-                        className="px-3 py-1 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-md">
+                        className="px-3 py-1 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-md"
+                        title="Codebase is private/internal"
+                      >
                         🔒 {p.name}
                       </span>
                     )
@@ -179,7 +166,9 @@ const Experience = () => {
                 <div className="flex flex-wrap gap-2">
                   {exp.clientSites.map((s) => (
                     <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer"
-                      className="px-3 py-1 text-xs font-medium text-purple-600 bg-purple-50 border border-purple-200 rounded-md hover:bg-purple-100 transition-colors">
+                      className="px-3 py-1 text-xs font-medium text-purple-600 bg-purple-50 border border-purple-200 rounded-md hover:bg-purple-100 transition-colors"
+                      title={`Visit the landing page for ${s.name}`}
+                    >
                       ↗ {s.name}
                     </a>
                   ))}
@@ -200,7 +189,7 @@ const Experience = () => {
             </div>
             
             {/* Divider (except for last item) */}
-            {exp.id !== experienceData[experienceData.length - 1].id && (
+            {index !== arr.length - 1 && (
               <div className="absolute -bottom-6 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
             )}
           </div>

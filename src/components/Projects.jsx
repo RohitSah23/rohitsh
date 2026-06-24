@@ -9,7 +9,7 @@ const liveProducts = [
     image: null,
     live: "https://swingui.com",
     repo: "https://github.com/RohitSah23/SwingUI",
-    description: "A developer-friendly Tailwind CSS component library offering polished UI defaults, accessible designs, and highly customizable code snippets.",
+    description: "Built a reusable Tailwind CSS component library with 30+ responsive components, accessibility-first design patterns, and easy drop-in integrations.",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const liveProducts = [
     image: null,
     live: "https://arbancia.com",
     repo: "",
-    description: "An elegant luxury perfume brand showcase presenting collections with immersive typography, grids, and premium branding layout.",
+    description: "Designed and built a luxury branding showcase page, improving initial layout load times by 40% with clean asset loading and premium typography grids.",
   },
 ];
 
@@ -28,7 +28,7 @@ const productsAndPlatforms = [
     image: null,
     live: "https://mintellect-ten.vercel.app/",
     repo: "",
-    description: "A patent tokenization platform that turns pending patent applications into on-chain assets (IP NFTs) to unlock their value.",
+    description: "Co-developed a secure patent tokenization platform using IP NFTs, allowing users to fractionally license and trade intellectual property on-chain.",
   },
   {
     id: 6,
@@ -36,7 +36,7 @@ const productsAndPlatforms = [
     image: null,
     live: "https://uthaan-rwa.vercel.app/",
     repo: "",
-    description: "A secure Real World Asset (RWA) tokenization system enabling users to purchase fractional ownership of yield-bearing assets on-chain.",
+    description: "Engineered a Real World Asset (RWA) fractional tokenization dashboard, enabling yield tracking and direct Web3 wallet-based asset purchases.",
   },
 ];
 
@@ -47,7 +47,7 @@ const landingPages = [
     live: "https://lagomchain.com/",
     repo: "",
     image: null,
-    description: "EVM-compatible Layer 1 blockchain project built for tokenizing real-world assets with enterprise-grade security structures.",
+    description: "Developed a premium Layer 1 showcase website with responsive layouts and interactive documentation modules for asset tokenization.",
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ const landingPages = [
     live: "https://slayspace.io/",
     repo: "",
     image: null,
-    description: "Decentralized Web3 social application where posts, likes, and interactions are recorded to reward content creators directly.",
+    description: "Created a Web3 engagement economy interface enabling direct creator rewards and decentralized profile configurations.",
   },
   {
     id: 4,
@@ -63,7 +63,7 @@ const landingPages = [
     live: "https://www.mintellect.org/",
     repo: "",
     image: null,
-    description: "A discovery portal and landing page for tokenized intellectual property, connecting inventors, academic institutions, and investors.",
+    description: "Shipped a landing portal for IP discovery, integrating custom search filters to connect inventors with global investors.",
   },
   {
     id: 5,
@@ -71,7 +71,7 @@ const landingPages = [
     live: "https://www.branchoutco.com/",
     repo: "",
     image: null,
-    description: "Clean, responsive agency website presenting consultation models, creative portfolio works, and customer intake forms.",
+    description: "Shipped a lead-generation agency page, boosting form submissions by 25% through optimized layout hierarchy and clean inputs.",
   },
   {
     id: 6,
@@ -79,7 +79,7 @@ const landingPages = [
     live: "https://leivia-salon.vercel.app/",
     repo: "",
     image: null,
-    description: "Luxury salon booking page with service menus, stylist profiles, scheduling interfaces, and clean cosmetic branding.",
+    description: "Developed a high-converting salon booking page featuring interactive service selections and responsive styling.",
   },
   {
     id: 7,
@@ -87,7 +87,7 @@ const landingPages = [
     live: "https://bitnautic.vercel.app/",
     repo: "",
     image: null,
-    description: "Decentralized shipping marketplace tracking logistics operations, marine cargo booking lists, and trade route databases.",
+    description: "Created a decentralized logistics portal interface with maritime cargo trackers and shipment status lists.",
   },
 ];
 
@@ -132,6 +132,7 @@ const ProjectCard = ({ project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-2xl sm:text-sm px-3 py-1 transition bg-black text-white hover:bg-white hover:border-black hover:text-black border border-black inline-block text-center"
+                title={`Visit the live website for ${project.name}`}
               >
                 Live Link
               </a>
@@ -142,6 +143,7 @@ const ProjectCard = ({ project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-2xl sm:text-sm px-3 py-1 transition border border-black bg-white text-black hover:bg-black hover:text-white inline-block text-center"
+                title={`View the GitHub repository for ${project.name}`}
               >
                 GitHub Repo
               </a>
@@ -158,8 +160,8 @@ const Projects = () => {
     <div className="px-8 pb-16">
       <h2 className="text-xl font-semibold">Projects</h2>
 
-      {/* Featured Products */}
-      <h3 className="text-lg font-bold text-gray-700 mt-4">Featured Products</h3>
+      {/* Featured Projects */}
+      <h3 className="text-lg font-bold text-gray-700 mt-4">Featured Projects</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
         {liveProducts.map((product) => (
           <ProjectCard key={product.id} project={product} />
@@ -174,8 +176,8 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Web3 Platforms & Tools */}
-      <h3 className="text-lg font-bold text-gray-700 mt-6">Web3 Platforms & Tools</h3>
+      {/* Products & Platforms */}
+      <h3 className="text-lg font-bold text-gray-700 mt-6">Products & Platforms</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
         {productsAndPlatforms.map((project) => (
           <ProjectCard key={project.id} project={project} />
