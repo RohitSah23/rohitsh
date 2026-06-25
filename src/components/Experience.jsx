@@ -74,7 +74,7 @@ const experienceData = [
 const Experience = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 md:p-10">
-      <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 mb-8">
+      <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 mb-8">
         Experience
       </h2>
       
@@ -93,20 +93,20 @@ const Experience = () => {
                   <img
                     src={exp.image}
                     alt={exp.company}
-                    className={`relative w-14 h-14 rounded-xl object-cover bg-white border border-gray-100 dark:border-gray-800 shadow-sm transition-all duration-300 ${exp.hideDetails ? 'blur-md grayscale opacity-50' : ''}`}
+                    className={`relative w-14 h-14 rounded-xl object-cover bg-white border border-gray-100 shadow-sm transition-all duration-300 ${exp.hideDetails ? 'blur-md grayscale opacity-50' : ''}`}
                   />
                 </div>
                 
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className={`text-xl font-bold text-gray-900 dark:text-gray-100 transition-all duration-300 ${exp.hideDetails ? 'blur-sm select-none opacity-40' : ''}`}>
+                    <h3 className={`text-xl font-bold text-gray-900 transition-all duration-300 ${exp.hideDetails ? 'blur-sm select-none opacity-40' : ''}`}>
                       {exp.company}
                     </h3>
-                    <span className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded shadow-sm bg-gray-50 dark:bg-gray-800/50">
+                    <span className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-gray-500 border border-gray-200 rounded shadow-sm bg-gray-50">
                       {exp.type}
                     </span>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 font-medium">
+                  <p className="text-gray-600 font-medium">
                     {exp.role}
                   </p>
                 </div>
@@ -114,10 +114,10 @@ const Experience = () => {
 
               {/* Date & Location */}
               <div className="mt-3 md:mt-0 md:text-right">
-                <p className="text-sm font-semibold text-gray-800 dark:text-gray-200 uppercase tracking-tight">
+                <p className="text-sm font-semibold text-gray-800 uppercase tracking-tight">
                   {exp.date}
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-500">
+                <p className="text-sm text-gray-500">
                   {exp.location}
                 </p>
               </div>
@@ -127,8 +127,8 @@ const Experience = () => {
             <ul className="mt-4 space-y-2.5 ml-1 inline-block">
               {exp.points.map((point, index) => (
                 <li key={index} className="flex items-start gap-3 group/item">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600 flex-shrink-0 group-hover/item:bg-blue-500 transition-colors"></span>
-                  <p className="text-gray-600 dark:text-gray-400 text-[15px] leading-relaxed">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 group-hover/item:bg-blue-500 transition-colors"></span>
+                  <p className="text-gray-600 text-[15px] leading-relaxed">
                     {point}
                   </p>
                 </li>
@@ -181,7 +181,7 @@ const Experience = () => {
               {exp.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-md shadow-[0_1px_2px_rgba(0,0,0,0.05)] hover:border-blue-400 dark:hover:border-blue-500 transition-colors"
+                  className="px-3 py-1 text-xs font-medium text-gray-600 bg-white border border-gray-200 rounded-md shadow-[0_1px_2px_rgba(0,0,0,0.05)] hover:border-blue-400 transition-colors"
                 >
                   {skill}
                 </span>
@@ -190,7 +190,7 @@ const Experience = () => {
             
             {/* Divider (except for last item) */}
             {index !== arr.length - 1 && (
-              <div className="absolute -bottom-6 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
+              <div className="absolute -bottom-6 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
             )}
           </div>
         ))}

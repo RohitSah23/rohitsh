@@ -11,7 +11,6 @@ Check out my portfolio here: [Portfolio Website](https://rohitsah23.vercel.app/)
 - Fully responsive and mobile-friendly design
 - Showcases my latest projects and GitHub repositories
 - Interactive UI with smooth animations
-- Dark mode/light mode toggle
 - Contact section with social media links
 
 ## 🛠️ Tech Stack
