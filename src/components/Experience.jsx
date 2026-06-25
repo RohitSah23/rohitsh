@@ -7,7 +7,7 @@ const experienceData = [
   {
     id: 5,
     company: "Singhcoin Ltd",
-    role: "Software Engineer",
+    role: "Full Stack Developer",
     date: "Jan 2025 - Present",
     location: "Remote, London, UK",
     type: "Full Time",
