@@ -1,5 +1,6 @@
 import React from "react";
 import useDocumentMetadata from "../hooks/useDocumentMetadata";
+import { Lock } from "lucide-react";
 
 
 
@@ -122,8 +123,8 @@ const ProjectCard = ({ project }) => {
       </div>
       <div className="mt-4 flex space-x-4">
         {project.locked ? (
-          <span className="rounded-2xl sm:text-sm px-3 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 cursor-not-allowed flex items-center gap-1">
-            🔒 Locked Code
+          <span className="rounded-2xl sm:text-sm px-3 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 cursor-not-allowed flex items-center gap-1.5">
+            <Lock className="w-3.5 h-3.5" /> Locked Code
           </span>
         ) : (
           <>

@@ -2,6 +2,7 @@ import React from "react";
 import ant from "../assets/antier.png";
 import alp from "../assets/alephium.png";
 import singhcoinLogo from "../assets/singhcoin.png";
+import { Lock, ExternalLink } from "lucide-react";
 
 const experienceData = [
   {
@@ -143,17 +144,19 @@ const Experience = () => {
                   {exp.products.map((p) =>
                     p.url ? (
                       <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
-                        className="px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors"
                         title={`Visit the live website for ${p.name}`}
                       >
-                        ↗ {p.name}
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        {p.name}
                       </a>
                     ) : (
                       <span key={p.name}
-                        className="px-3 py-1 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-md"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-md"
                         title="Codebase is private/internal"
                       >
-                        🔒 {p.name}
+                        <Lock className="w-3 h-3" />
+                        {p.name}
                       </span>
                     )
                   )}
@@ -166,10 +169,11 @@ const Experience = () => {
                 <div className="flex flex-wrap gap-2">
                   {exp.clientSites.map((s) => (
                     <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer"
-                      className="px-3 py-1 text-xs font-medium text-purple-600 bg-purple-50 border border-purple-200 rounded-md hover:bg-purple-100 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-purple-600 bg-purple-50 border border-purple-200 rounded-md hover:bg-purple-100 transition-colors"
                       title={`Visit the landing page for ${s.name}`}
                     >
-                      ↗ {s.name}
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      {s.name}
                     </a>
                   ))}
                 </div>
