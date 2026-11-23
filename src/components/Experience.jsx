@@ -1,206 +1,114 @@
-import React from "react";
-import ant from "../assets/antier.png";
-import alp from "../assets/alephium.png";
-import singhcoinLogo from "../assets/singhcoin.png";
-import { Lock, ExternalLink } from "lucide-react";
+import { Container, Eyebrow, Heading } from "./ui";
+import { EXPERIENCE_DATA } from "../lib/data";
+import { ExternalLink, Briefcase, Calendar, MapPin } from "lucide-react";
 
-const experienceData = [
-  {
-    id: 5,
-    company: "Singhcoin Ltd",
-    role: "Full Stack Developer",
-    date: "Jan 2025 - Present",
-    location: "Remote, London, UK",
-    type: "Full Time",
-    points: [
-      "Built and shipped 10+ production web applications using React, Next.js, TypeScript, and Tailwind CSS.",
-      "Designed 50+ reusable components for scalable dashboards, admin panels, landing pages, and SaaS products.",
-      "Integrated 25+ REST APIs, secure authentication, RBAC, and blockchain wallet functionality.",
-      "Improved performance by 35% using lazy loading, code splitting, and asset optimization.",
-      "Mentored 5+ junior developers and interns through code reviews and technical guidance."
-    ],
-    products: [
-      { name: "Nomtree Recipe", url: null },
-      { name: "Slay Merchant Panel", url: null },
-      { name: "Mintellect", url: "https://mintellect-ten.vercel.app/" },
-      { name: "Uthaan RWA", url: "https://uthaan-rwa.vercel.app/" },
-      { name: "Bitnautic", url: "https://bitnautic.vercel.app/" },
-    ],
-    clientSites: [
-      { name: "Lagom Chain", url: "https://lagomchain.com/" },
-      { name: "Slay Space", url: "https://slayspace.io/" },
-      { name: "Mintellect", url: "https://www.mintellect.org/" },
-      { name: "BranchOutCo", url: "https://www.branchoutco.com/" },
-      { name: "Leivia Salon", url: "https://leivia-salon.vercel.app/" },
-    ],
-    skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "REST APIs", "Web3", "Ethers.js"],
-    image: singhcoinLogo,
-    hideDetails: false
-  },
-  
-  {
-    id: 1,
-    company: "Alephium India",
-    role: "DevRel India",
-    date: "Aug 2024 - Sept 2024",
-    location: "India - Remote",
-    type: "Full Time",
-    hidden: true,
-    points: [
-      "Driving developer relations, fostering a strong blockchain community.",
-      "Creating educational content to enhance Alephium’s adoption across India.",
-      "Coordinating with local developers to build on Alephium ecosystem."
-    ],
-    skills: ["Blockchain", "Web3", "Technical Writing", "Community Building"],
-    image: alp,
-  },
-  {
-    id: 2,
-    company: "Antier Solutions",
-    role: "Software Developer & Trainer Intern",
-    date: "Jan 2024 - May 2024",
-    location: "Mohali, India",
-    type: "Internship",
-    hidden: true,
-    points: [
-      "Developed blockchain-based solutions and integrated Web3 functionalities.",
-      "Mentored trainees and conducted workshops to upskill developers in blockchain.",
-      "Worked on real-world projects involving smart contracts and DApps."
-    ],
-    skills: ["Solidity", "React", "Node.js", "Ethereum"],
-    image: ant,
-  },
-];
-
-const Experience = () => {
+export default function Experience() {
   return (
-    <div className="max-w-4xl mx-auto p-6 md:p-10">
-      <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 mb-8">
-        Experience
-      </h2>
-      
-      <div className="space-y-12">
-        {experienceData.filter((exp) => !exp.hidden).map((exp, index, arr) => (
-          <div
-            key={exp.id}
-            className="group relative transition-all duration-300"
-          >
-            {/* Header Section */}
-            <div className="flex flex-col md:flex-row md:items-start justify-between mb-4">
-              <div className="flex items-start gap-4">
-                {/* Company Logo */}
-                <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-50 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
-                  <img
-                    src={exp.image}
-                    alt={exp.company}
-                    className={`relative w-14 h-14 rounded-xl object-cover bg-white border border-gray-100 shadow-sm transition-all duration-300 ${exp.hideDetails ? 'blur-md grayscale opacity-50' : ''}`}
-                  />
-                </div>
-                
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className={`text-xl font-bold text-gray-900 transition-all duration-300 ${exp.hideDetails ? 'blur-sm select-none opacity-40' : ''}`}>
-                      {exp.company}
-                    </h3>
-                    <span className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-gray-500 border border-gray-200 rounded shadow-sm bg-gray-50">
-                      {exp.type}
+    <section
+      id="experience"
+      className="overflow-hidden rounded-[var(--r)] bg-white p-[clamp(1.5rem,4vw,3.5rem)] shadow-card"
+    >
+      <Container className="!px-0">
+        <div className="mb-10 flex flex-col gap-4 lg:mb-12">
+          <Eyebrow className="text-dim">Career Journey</Eyebrow>
+          <Heading id="experience-title">
+            Professional experience{" "}
+            <span className="inline-block rounded-full bg-brand px-[0.15em] pb-[0.04em]">& impact.</span>
+          </Heading>
+          <p className="max-w-[56ch] text-[17px] leading-relaxed text-dim">
+            From architecting agentic AI and content automation at{" "}
+            <a
+              href="https://loudlabs.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-ink underline decoration-brand/60 underline-offset-2"
+            >
+              Loud Labs
+            </a>{" "}
+            to shipping full-stack products with React, Next.js, NestJS, and Web3 across startups
+            and global remote teams.
+          </p>
+        </div>
+
+        <div className="divide-y divide-rule">
+          {EXPERIENCE_DATA.map((exp) => (
+            <article key={exp.id} className="reveal py-8 first:pt-0 lg:py-10">
+              <div className="flex flex-col gap-5 lg:grid lg:grid-cols-[minmax(0,1fr)_11.5rem] lg:gap-x-10 lg:gap-y-5">
+                <div className="min-w-0 lg:col-span-2 lg:grid lg:grid-cols-[minmax(0,1fr)_11.5rem] lg:items-start lg:gap-x-10">
+                  <div className="flex min-w-0 items-start gap-4">
+                    {exp.logo ? (
+                      <img
+                        src={exp.logo}
+                        alt=""
+                        className={`h-14 w-14 shrink-0 rounded-2xl border border-rule bg-white shadow-sm sm:h-16 sm:w-16 ${
+                          exp.logoContain ? "object-contain p-2" : "object-cover p-1"
+                        }`}
+                      />
+                    ) : (
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand text-ink shadow-sm sm:h-16 sm:w-16">
+                        <Briefcase className="h-6 w-6" aria-hidden />
+                      </div>
+                    )}
+
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center gap-2 gap-y-1">
+                        <h3 className="text-xl font-bold tracking-tight text-ink sm:text-2xl">
+                          {exp.companyUrl ? (
+                            <a
+                              href={exp.companyUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex max-w-full items-center gap-1.5 hover:opacity-80"
+                            >
+                              <span className="truncate">{exp.company}</span>
+                              <ExternalLink className="h-4 w-4 shrink-0 text-dim" aria-hidden />
+                            </a>
+                          ) : (
+                            exp.company
+                          )}
+                        </h3>
+                        <span className="rounded-full bg-ink px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white sm:text-[11px]">
+                          {exp.type}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-base font-semibold text-ink">{exp.role}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-medium text-dim sm:text-sm lg:col-start-2 lg:row-start-1 lg:flex-col lg:items-end lg:gap-2 lg:text-right">
+                    <span className="inline-flex items-center gap-1.5 font-semibold text-ink">
+                      <Calendar className="h-3.5 w-3.5 shrink-0 text-brand" aria-hidden />
+                      {exp.date}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPin className="h-3.5 w-3.5 shrink-0 text-dim" aria-hidden />
+                      {exp.location}
                     </span>
                   </div>
-                  <p className="text-gray-600 font-medium">
-                    {exp.role}
+                </div>
+
+                <div className="min-w-0 space-y-6 sm:ml-[4.5rem] md:ml-[5rem] lg:col-span-2 lg:ml-[calc(4rem+2.5rem)]">
+                  <ul className="space-y-3">
+                    {exp.points.map((pt, pIdx) => (
+                      <li key={pIdx} className="flex items-start gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                        <p className="text-sm leading-relaxed text-dim sm:text-[15px]">{pt}</p>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="border-t border-rule pt-4 font-mono text-[0.8125rem] leading-relaxed text-dim">
+                    <span className="font-semibold uppercase tracking-wider text-ink/80">
+                      Stack{" "}
+                    </span>
+                    {exp.skills.join(" · ")}
                   </p>
                 </div>
               </div>
-
-              {/* Date & Location */}
-              <div className="mt-3 md:mt-0 md:text-right">
-                <p className="text-sm font-semibold text-gray-800 uppercase tracking-tight">
-                  {exp.date}
-                </p>
-                <p className="text-sm text-gray-500">
-                  {exp.location}
-                </p>
-              </div>
-            </div>
-
-            {/* Description Points */}
-            <ul className="mt-4 space-y-2.5 ml-1 inline-block">
-              {exp.points.map((point, index) => (
-                <li key={index} className="flex items-start gap-3 group/item">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 group-hover/item:bg-blue-500 transition-colors"></span>
-                  <p className="text-gray-600 text-[15px] leading-relaxed">
-                    {point}
-                  </p>
-                </li>
-              ))}
-            </ul>
-
-            {/* Products & Client Sites */}
-            {exp.products && (
-              <div className="mt-5">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Products & Platforms</p>
-                <div className="flex flex-wrap gap-2">
-                  {exp.products.map((p) =>
-                    p.url ? (
-                      <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors"
-                        title={`Visit the live website for ${p.name}`}
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                        {p.name}
-                      </a>
-                    ) : (
-                      <span key={p.name}
-                        className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-md"
-                        title="Codebase is private/internal"
-                      >
-                        <Lock className="w-3 h-3" />
-                        {p.name}
-                      </span>
-                    )
-                  )}
-                </div>
-              </div>
-            )}
-            {exp.clientSites && (
-              <div className="mt-4">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Landing Pages & UI/UX</p>
-                <div className="flex flex-wrap gap-2">
-                  {exp.clientSites.map((s) => (
-                    <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-purple-600 bg-purple-50 border border-purple-200 rounded-md hover:bg-purple-100 transition-colors"
-                      title={`Visit the landing page for ${s.name}`}
-                    >
-                      <ExternalLink className="w-3.5 h-3.5" />
-                      {s.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Tech Stack Tags */}
-            <div className="mt-6 flex flex-wrap gap-2">
-              {exp.skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1 text-xs font-medium text-gray-600 bg-white border border-gray-200 rounded-md shadow-[0_1px_2px_rgba(0,0,0,0.05)] hover:border-blue-400 transition-colors"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-            
-            {/* Divider (except for last item) */}
-            {index !== arr.length - 1 && (
-              <div className="absolute -bottom-6 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
+            </article>
+          ))}
+        </div>
+      </Container>
+    </section>
   );
-};
-
-export default Experience;
+}

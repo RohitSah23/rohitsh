@@ -1,95 +1,96 @@
-import React from "react";
-import ant from "../assets/antier.png";
+import { Eyebrow } from "./ui";
+import { CERTIFICATIONS } from "../lib/data";
+import { Award, Calendar, MapPin, CheckCircle2, ExternalLink } from "lucide-react";
 
-const certificationsData = [
-  {
-    id: 1,
-    title: "Certified Blockchain Associate",
-    issuer: "Antier School of Blocktech (ASB)",
-    date: "Jul 2023 – Dec 2023",
-    location: "Mohali, India",
-    points: [
-      "Completed intensive blockchain development training covering Solidity, Smart Contracts, Hardhat, IPFS, ERC20, ERC721, ERC1155, and DeFi fundamentals.",
-      "Developed decentralized application prototypes and smart contract implementations on Ethereum.",
-    ],
-    skills: ["Solidity", "Smart Contracts", "Hardhat", "IPFS", "ERC20", "ERC721", "DeFi", "Ethereum"],
-    image: ant,
-  },
-];
-
-const Certifications = () => {
+export default function Certifications() {
   return (
-    <div className="max-w-4xl mx-auto p-6 md:p-10">
-      <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 mb-8">
-        Certifications
-      </h2>
+    <div className="reveal mt-12 border-t border-rule pt-12 lg:mt-16 lg:pt-16">
+      <div className="mb-8 flex flex-col gap-3">
+        <Eyebrow className="text-dim">Accreditation</Eyebrow>
+        <h3 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+          Certifications <span className="inline-block rounded-full bg-brand px-[0.12em] pb-[0.03em]">& credentials</span>
+        </h3>
+      </div>
 
-      <div className="space-y-12">
-        {certificationsData.map((cert) => (
-          <div key={cert.id} className="group relative transition-all duration-300">
-            {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-start justify-between mb-4">
-              <div className="flex items-start gap-4">
-                {/* Logo */}
-                <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
-                  <img
-                    src={cert.image}
-                    alt={cert.issuer}
-                    className="relative w-14 h-14 rounded-xl object-cover bg-white border border-gray-100 shadow-sm transition-all duration-300"
-                  />
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {cert.title}
-                    </h3>
-                    <span className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-gray-500 border border-gray-200 rounded shadow-sm bg-gray-50">
-                      Certificate
-                    </span>
+      <div className="grid grid-cols-1 gap-5 sm:gap-6">
+        {CERTIFICATIONS.map((cert) => (
+          <article
+            key={cert.id}
+            className="flex flex-col justify-between rounded-2xl border border-rule bg-white p-5 shadow-card sm:p-7"
+          >
+            <div>
+              <div className="flex flex-col gap-4 border-b border-rule pb-5 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex items-start gap-4">
+                  {cert.logo ? (
+                    <img
+                      src={cert.logo}
+                      alt=""
+                      className={`size-12 shrink-0 rounded-xl border border-rule object-cover ${
+                        cert.logoDark ? "bg-ink" : "bg-white p-1"
+                      }`}
+                    />
+                  ) : (
+                    <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand text-ink">
+                      <Award className="size-6" aria-hidden />
+                    </div>
+                  )}
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h4 className="text-lg font-bold text-ink sm:text-xl">{cert.title}</h4>
+                      <span className="rounded-full border border-rule bg-white px-2.5 py-0.5 text-[10px] font-semibold text-dim">
+                        Credential
+                      </span>
+                    </div>
+                    <p className="mt-1 text-sm font-semibold text-ink">{cert.issuer}</p>
                   </div>
-                  <p className="text-gray-600 font-medium">{cert.issuer}</p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-dim sm:text-sm">
+                  <span className="inline-flex items-center gap-1 font-semibold text-ink">
+                    <Calendar className="size-3.5 text-brand" aria-hidden />
+                    {cert.date}
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <MapPin className="size-3.5" aria-hidden />
+                    {cert.location}
+                  </span>
                 </div>
               </div>
 
-              {/* Date & Location */}
-              <div className="mt-3 md:mt-0 md:text-right">
-                <p className="text-sm font-semibold text-gray-800 uppercase tracking-tight">
-                  {cert.date}
-                </p>
-                <p className="text-sm text-gray-500">{cert.location}</p>
-              </div>
+              <ul className="mt-5 space-y-2.5">
+                {cert.points.map((pt, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
+                    <p className="text-sm leading-relaxed text-dim">{pt}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Bullet Points */}
-            <ul className="mt-4 space-y-2.5 ml-1 inline-block">
-              {cert.points.map((point, index) => (
-                <li key={index} className="flex items-start gap-3 group/item">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 group-hover/item:bg-blue-500 transition-colors"></span>
-                  <p className="text-gray-600 text-[15px] leading-relaxed">
-                    {point}
-                  </p>
-                </li>
-              ))}
-            </ul>
-
-            {/* Skill Tags */}
-            <div className="mt-6 flex flex-wrap gap-2">
-              {cert.skills.map((skill) => (
+            <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-rule pt-4">
+              {cert.skills.map((s) => (
                 <span
-                  key={skill}
-                  className="px-3 py-1 text-xs font-medium text-gray-600 bg-white border border-gray-200 rounded-md shadow-[0_1px_2px_rgba(0,0,0,0.05)] hover:border-blue-400 transition-colors"
+                  key={s}
+                  className="rounded-full border border-rule bg-white px-2.5 py-0.5 text-[10px] font-semibold text-ink"
                 >
-                  {skill}
+                  {s}
                 </span>
               ))}
+              {cert.credentialUrl && (
+                <a
+                  href={cert.credentialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-auto inline-flex items-center gap-1.5 rounded-full border-[1.5px] border-ink px-3 py-1 text-xs font-semibold text-ink transition hover:bg-brand"
+                >
+                  Show credential
+                  <ExternalLink className="size-3.5" aria-hidden />
+                </a>
+              )}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>
   );
-};
-
-export default Certifications;
+}

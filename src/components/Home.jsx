@@ -1,30 +1,31 @@
-import React from "react";
-import Hero from "../components/Hero";
-import RecentWork from "../components/RecentWork";
-import Skills from "./Skills";
+import Hero from "./Hero";
+import About from "./About";
+import Projects from "./Projects";
 import Experience from "./Experience";
-import Certifications from "./Certifications";
+import Skills from "./Skills";
 import Education from "./Education";
+import Closing from "./Closing";
 import useDocumentMetadata from "../hooks/useDocumentMetadata";
+import { SITE_METADATA } from "../lib/data";
 
-const Home = () => {
+export default function Home() {
   useDocumentMetadata({
-    title: "Rohit Kumar - Frontend focused Full stack developer",
-    description: "Frontend focused Full stack developer with 1.5+ years of experience building React, Next.js, and TypeScript Web2/Web3 apps.",
+    title: "KR ROHIT | AI Strategist · Founder @ Sarg Studio",
+    description: SITE_METADATA.description,
     url: "https://www.rohitisog.com/",
-    keywords: "Frontend focused Full stack developer, Frontend Engineer, Frontend Developer, React, Next.js, TypeScript, Redux, Tailwind CSS, Web3, JavaScript, HTML, CSS"
+    keywords:
+      "KR ROHIT, Loud Labs, AI Strategist, Generative AI, Agentic Workflows, Full Stack Developer, React, Next.js, TypeScript, NestJS, Web3, Solidity",
   });
 
   return (
-    <div>
+    <main className="mt-4 flex w-full flex-col gap-4">
       <Hero />
-      <RecentWork />
-      <Skills />
+      <About />
+      <Projects />
       <Experience />
-      <Certifications />
+      <Skills />
       <Education />
-    </div>
+      <Closing />
+    </main>
   );
-};
-
-export default Home;
+}

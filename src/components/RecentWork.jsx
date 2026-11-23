@@ -1,65 +1,82 @@
-import React from "react";
-import { Link } from "react-router";
-import swinguilogo from "../assets/UI.webp";
-import lagomchainLogo from "../assets/lagomchain.jpeg";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { Container, Eyebrow } from "./ui";
+import { TONES, SPOTLIGHT_PROJECTS, toneStyle } from "../lib/data";
 
-
-const recentWorkData = [
-  {
-    id: 1,
-    title: "Swing UI",
-    description:
-      "A modern Tailwind CSS component library for building responsive, accessible interfaces with developer-friendly APIs and polished design defaults.",
-    image: swinguilogo,
-    link: "https://swingui.com",
-  },
-  {
-    id: 2,
-    title: "LagomChain",
-    description:
-      "An EVM-compatible Layer 1 blockchain for real-world asset tokenization, with white-label Web3 modules and enterprise-grade security for global businesses.",
-    image: lagomchainLogo,
-    link: "https://lagomchain.com/",
-  },
-];
-
-const RecentWork = () => {
+export default function RecentWork() {
   return (
-    <div className="px-8 mt-6">
-      <h2 className="text-xl font-semibold">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-        {recentWorkData.map((project) => (
+    <section
+      id="recent-work"
+      style={toneStyle(TONES.projects)}
+      className="tone overflow-hidden py-20"
+    >
+      <Container>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <Eyebrow className="text-(--t-mute)">
+              Featured Deployments
+            </Eyebrow>
+            <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl mt-1">
+              Recent Highlights
+            </h2>
+          </div>
           <a
-            key={project.id}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col h-full bg-white p-4 rounded-xl border border-neutral-300/50 hover:shadow-lg transition"
+            href="#projects"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-(--t-acc) hover:underline self-start sm:self-end"
           >
-            <div className="flex items-center gap-4">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-12 h-12 shrink-0 rounded-full object-cover"
-              />
-              <h3 className="text-lg font-bold">{project.title}</h3>
-            </div>
-            <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-              {project.description}
-            </p>
+            Browse all works <ArrowRight className="h-4 w-4" />
           </a>
-        ))}
-      </div>
-      <div className="mt-6">
-        <Link
-          to="/projects"
-          className="text-blue-600 hover:underline font-semibold"
-        >
-          Check other work →
-        </Link>
-      </div>
-    </div>
-  );
-};
+        </div>
 
-export default RecentWork;
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {SPOTLIGHT_PROJECTS.slice(0, 2).map((item) => (
+            <div
+              key={item.id}
+              className="flex flex-col justify-between rounded-3xl border border-(--t-line) bg-white/80 p-6 shadow-sm transition hover:shadow-md"
+            >
+              <div>
+                <div className="flex items-center gap-4">
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-14 w-14 shrink-0 rounded-2xl object-cover border border-(--t-line)"
+                    />
+                  ) : (
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-(--t-acc) text-xl font-bold text-white">
+                      {item.title.slice(0, 2)}
+                    </div>
+                  )}
+                  <div>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-(--t-acc)">
+                      {item.category}
+                    </span>
+                    <h3 className="text-xl font-bold text-ink">{item.title}</h3>
+                  </div>
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-(--t-mute)">
+                  {item.description}
+                </p>
+              </div>
+
+              <div className="mt-6 flex items-center justify-between border-t border-(--t-line) pt-4">
+                <span className="text-xs font-semibold text-(--t-mute)">
+                  {item.metrics}
+                </span>
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-(--t-acc) hover:underline"
+                  >
+                    View Project <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}

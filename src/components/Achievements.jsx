@@ -1,19 +1,12 @@
-import React from 'react'
-
-const Achievements = () => {
+export default function Achievements() {
   return (
-    <>
-    <div>
-      <h1>My Achievements</h1>
-      <ul>
-        <li>Won Inter School Hackathon</li>
-        <li>Won ETHGlobal Online 2023 Hackathon</li>
-        <li>Graduated from the GNDU University</li>
-        <li>Completed a course in from Angela Yu</li>
+    <div className="rounded-2xl border border-line bg-white p-6 shadow-sm">
+      <h3 className="text-xl font-bold text-ink">Achievements</h3>
+      <ul className="mt-4 space-y-2 text-sm text-ink-soft">
+        <li>• Won ETHGlobal Online 2023 Hackathon</li>
+        <li>• Won Inter School Hackathon</li>
+        <li>• Graduated BCA from GNDU / DAV College Jalandhar (77.41%)</li>
       </ul>
     </div>
-    </>
-  )
+  );
 }
-
-export default Achievements

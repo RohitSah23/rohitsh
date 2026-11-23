@@ -1,199 +1,173 @@
-import React from "react";
+import { useState } from "react";
+import { Container, Eyebrow, Heading, HeadingAccent, SectionLead } from "./ui";
+import { Link } from "react-router";
+import { ALL_PROJECTS, getProjectsForHome } from "../lib/data";
+import { ExternalLink, Github, Lock, ArrowUpRight } from "lucide-react";
+import { ProjectModal } from "./ProjectModal";
 import useDocumentMetadata from "../hooks/useDocumentMetadata";
-import { Lock } from "lucide-react";
 
+export default function Projects({ fullCatalog = false }) {
+  const [selectedProject, setSelectedProject] = useState(null);
 
+  useDocumentMetadata(
+    fullCatalog
+      ? {
+          title: "Projects | KR ROHIT — Full Stack Developer",
+          description:
+            "Explore web applications, Web3 platforms, SaaS dashboards, and open source design systems built by KR ROHIT.",
+          url: "https://www.rohitisog.com/projects",
+          keywords:
+            "Projects, Portfolio, React, Next.js, Web3, Tailwind CSS, Swing UI, LagomChain, Arbancia",
+        }
+      : {}
+  );
 
-const liveProducts = [
-  {
-    id: 1,
-    name: "Swing UI",
-    image: null,
-    live: "https://swingui.com",
-    repo: "https://github.com/RohitSah23/SwingUI",
-    description: "Built a reusable Tailwind CSS component library with 30+ responsive components, accessibility-first design patterns, and easy drop-in integrations.",
-  },
-  {
-    id: 2,
-    name: "Arbancia",
-    image: null,
-    live: "https://arbancia.com",
-    repo: "",
-    description: "Designed and built a luxury branding showcase page, improving initial layout load times by 40% with clean asset loading and premium typography grids.",
-  },
-];
+  const homeProjects = getProjectsForHome();
+  const items = fullCatalog ? ALL_PROJECTS : homeProjects;
 
-const productsAndPlatforms = [
-  {
-    id: 5,
-    name: "Mintellect",
-    image: null,
-    live: "https://mintellect-ten.vercel.app/",
-    repo: "",
-    description: "Co-developed a secure patent tokenization platform using IP NFTs, allowing users to fractionally license and trade intellectual property on-chain.",
-  },
-  {
-    id: 6,
-    name: "Uthaan RWA",
-    image: null,
-    live: "https://uthaan-rwa.vercel.app/",
-    repo: "",
-    description: "Engineered a Real World Asset (RWA) fractional tokenization dashboard, enabling yield tracking and direct Web3 wallet-based asset purchases.",
-  },
-];
-
-const landingPages = [
-  {
-    id: 2,
-    name: "Lagom Chain",
-    live: "https://lagomchain.com/",
-    repo: "",
-    image: null,
-    description: "Developed a premium Layer 1 showcase website with responsive layouts and interactive documentation modules for asset tokenization.",
-  },
-  {
-    id: 3,
-    name: "Slay Space",
-    live: "https://slayspace.io/",
-    repo: "",
-    image: null,
-    description: "Created a Web3 engagement economy interface enabling direct creator rewards and decentralized profile configurations.",
-  },
-  {
-    id: 4,
-    name: "Mintellect",
-    live: "https://www.mintellect.org/",
-    repo: "",
-    image: null,
-    description: "Shipped a landing portal for IP discovery, integrating custom search filters to connect inventors with global investors.",
-  },
-  {
-    id: 5,
-    name: "BranchOutCo",
-    live: "https://www.branchoutco.com/",
-    repo: "",
-    image: null,
-    description: "Shipped a lead-generation agency page, boosting form submissions by 25% through optimized layout hierarchy and clean inputs.",
-  },
-  {
-    id: 6,
-    name: "Leivia Salon",
-    live: "https://leivia-salon.vercel.app/",
-    repo: "",
-    image: null,
-    description: "Developed a high-converting salon booking page featuring interactive service selections and responsive styling.",
-  },
-  {
-    id: 7,
-    name: "Bitnautic",
-    live: "https://bitnautic.vercel.app/",
-    repo: "",
-    image: null,
-    description: "Created a decentralized logistics portal interface with maritime cargo trackers and shipment status lists.",
-  },
-];
-
-const ProjectCard = ({ project }) => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md transition hover:bg-gray-100 hover:shadow-lg w-full flex flex-col justify-between group overflow-hidden">
-      <div>
-        {project.image && (
-          /* Thumbnail Wrapper with Hover Overlay */
-          <div className="relative rounded-lg w-full h-40 overflow-hidden mb-2">
-            <img
-              src={project.image}
-              alt={project.name}
-              className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-
-            {/* Description Overlay appearing on hover */}
-            <div className="absolute inset-0 bg-black/85 flex items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 select-none">
-              <p className="text-white text-xs leading-relaxed font-normal">
-                {project.description}
-              </p>
-            </div>
+    <section
+      id="projects"
+      className="overflow-hidden rounded-[var(--r)] bg-white p-[clamp(1.5rem,4vw,3.5rem)] shadow-card"
+    >
+      <Container className="!px-0">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex flex-col gap-4">
+            <Eyebrow className="text-dim">{fullCatalog ? "Full catalog" : "Selected Works"}</Eyebrow>
+            <Heading id="projects-title">
+              {fullCatalog ? (
+                <>
+                  Crafted products <HeadingAccent>& platforms.</HeadingAccent>
+                </>
+              ) : (
+                <>
+                  Selected work <HeadingAccent>at a glance.</HeadingAccent>
+                </>
+              )}
+            </Heading>
+            {!fullCatalog && (
+              <SectionLead>Shipped products across web, Web3, and studio builds.</SectionLead>
+            )}
           </div>
-        )}
-        <h4 className="text-lg font-semibold mt-1">{project.name}</h4>
-        {!project.image && (
-          <p className="text-sm text-gray-600 leading-relaxed font-normal mt-2">
-            {project.description}
-          </p>
-        )}
-      </div>
-      <div className="mt-4 flex space-x-4">
-        {project.locked ? (
-          <span className="rounded-2xl sm:text-sm px-3 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 cursor-not-allowed flex items-center gap-1.5">
-            <Lock className="w-3.5 h-3.5" /> Locked Code
-          </span>
-        ) : (
-          <>
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-2xl sm:text-sm px-3 py-1 transition bg-black text-white hover:bg-white hover:border-black hover:text-black border border-black inline-block text-center"
-                title={`Visit the live website for ${project.name}`}
-              >
-                Live Link
-              </a>
-            )}
-            {project.repo && (
-              <a
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-2xl sm:text-sm px-3 py-1 transition border border-black bg-white text-black hover:bg-black hover:text-white inline-block text-center"
-                title={`View the GitHub repository for ${project.name}`}
-              >
-                GitHub Repo
-              </a>
-            )}
-          </>
-        )}
-      </div>
-    </div>
+
+          {!fullCatalog && (
+            <Link
+              to="/projects"
+              className="inline-flex min-h-11 items-center gap-1.5 self-start rounded-full border-[1.5px] border-ink bg-white px-5 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-card sm:self-end"
+            >
+              View all projects <ArrowUpRight className="size-4" aria-hidden />
+            </Link>
+          )}
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          {items.map((project) => (
+            <article
+              key={project.id}
+              className="group flex flex-col justify-between rounded-2xl border border-rule bg-white p-5 shadow-card transition hover:-translate-y-1 hover:shadow-lift sm:p-6"
+            >
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedProject(project)}
+                  className="relative mb-5 flex h-40 w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl border border-rule bg-white p-4 transition group-hover:border-brand/40"
+                >
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt=""
+                      className="max-h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex size-16 items-center justify-center rounded-xl bg-brand text-lg font-bold text-ink">
+                      {project.name.slice(0, 2).toUpperCase()}
+                    </div>
+                  )}
+                  <span className="absolute top-2.5 right-2.5 rounded-full bg-white px-2.5 py-0.5 text-[10px] font-semibold text-ink shadow-sm ring-1 ring-rule">
+                    {project.badge}
+                  </span>
+                </button>
+
+                <div className="flex items-start justify-between gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(project)}
+                    className="cursor-pointer text-left text-lg font-bold tracking-tight text-ink transition hover:text-brand sm:text-xl"
+                  >
+                    {project.name}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(project)}
+                    title="View details"
+                    className="shrink-0 cursor-pointer text-dim opacity-0 transition group-hover:opacity-100 hover:text-ink"
+                  >
+                    <ArrowUpRight className="size-4" aria-hidden />
+                  </button>
+                </div>
+
+                <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-dim sm:text-sm">
+                  {project.description}
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {project.tags.slice(0, 4).map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-md border border-rule bg-white px-2 py-0.5 text-[10px] font-medium text-ink"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  {project.tags.length > 4 && (
+                    <span className="rounded-md border border-rule bg-white/60 px-1.5 py-0.5 text-[10px] font-medium text-dim">
+                      +{project.tags.length - 4}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-5 flex items-center justify-between border-t border-rule pt-4">
+                <div className="flex flex-wrap items-center gap-2">
+                  {project.live ? (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-brand px-3 py-1.5 text-xs font-semibold text-ink transition hover:opacity-90"
+                    >
+                      <ExternalLink className="size-3" aria-hidden /> Live
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-rule bg-white px-3 py-1.5 text-xs font-medium text-dim">
+                      <Lock className="size-3" aria-hidden /> Internal
+                    </span>
+                  )}
+                  {project.repo && (
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="inline-flex items-center gap-1.5 rounded-full border-[1.5px] border-ink bg-white px-3 py-1.5 text-xs font-semibold text-ink transition hover:bg-brand/20"
+                    >
+                      <Github className="size-3" aria-hidden /> Repo
+                    </a>
+                  )}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedProject(project)}
+                  className="cursor-pointer text-xs font-semibold text-dim transition hover:text-ink"
+                >
+                  Details →
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Container>
+
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+    </section>
   );
-};
-
-const Projects = () => {
-  useDocumentMetadata({
-    title: "Projects | Rohit Kumar - Frontend focused Full stack developer",
-    description: "Showcase of frontend projects, SaaS platforms, and responsive landing pages built by Rohit Kumar.",
-    url: "https://www.rohitisog.com/projects",
-    keywords: "Projects, Portfolio, Frontend Projects, React Projects, Web3 Apps, SaaS, Landing Pages"
-  });
-
-  return (
-    <div className="px-8 pb-16">
-      <h2 className="text-xl font-semibold">Projects</h2>
-
-      {/* Featured Projects */}
-      <h3 className="text-lg font-bold text-gray-700 mt-4">Featured Projects</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
-        {liveProducts.map((product) => (
-          <ProjectCard key={product.id} project={product} />
-        ))}
-      </div>
-
-      {/* Landing Pages & UI/UX */}
-      <h3 className="text-lg font-bold text-gray-700 mt-6">Landing Pages & UI/UX</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
-        {landingPages.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
-
-      {/* Products & Platforms */}
-      <h3 className="text-lg font-bold text-gray-700 mt-6">Products & Platforms</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
-        {productsAndPlatforms.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default Projects;
+}

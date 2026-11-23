@@ -1,91 +1,104 @@
-import React from "react";
-import { Link } from "react-router"; 
-import x from "../assets/x.svg";
-import linkedin from "../assets/linked.svg";
-import discord from "../assets/discord.svg";
-import github from "../assets/github.svg";
-import email from "../assets/email.svg";
-import resumePDF from "../assets/Rohit_Kumar_CV.pdf";
+import { ArrowRight, Download } from "lucide-react";
+import { Eyebrow } from "./ui";
+import { HeroProfileCard } from "./hero-profile-card";
+import { SargFollowersCard } from "./sarg-followers-card";
+import {
+  SITE_METADATA,
+  SITE_BIO,
+  KEY_METRICS,
+  resumePDF,
+} from "../lib/data";
 
-const Hero = () => {
-  const socialData = [
-    {
-      id: 1,
-      name: "X (Twitter)",
-      icon: x,
-      link: "https://x.com/rohitisog",
-    },
-    {
-      id: 2,
-      name: "LinkedIn",
-      icon: linkedin,
-      link: "https://www.linkedin.com/in/rohitisog/",
-    },
-    {
-      id: 3,
-      name: "GitHub",
-      icon: github,
-      link: "https://www.github.com/RohitSah23",
-    },
-    {
-      id: 4,
-      name: "Discord",
-      icon: discord,
-      link: "https://discord.com/users/RohitSah23",
-    },
-    {
-      id: 5,
-      name: "Email",
-      icon: email,
-      link: "mailto:rohitisog@gmail.com",
-    },
-  ];
-
+function HeroHighlight({ children }) {
   return (
-    <div className="px-8">
-      <div>
-        <h2 className="text-xl font-semibold">About</h2>
-        <p className="my-4 text-lg text-gray-800">
-          Frontend focused Full stack developer with 1.5+ years of experience building scalable
-          React, Next.js, and TypeScript applications. Delivered production-ready
-          Web2 and Web3 products used across Social, SaaS, RWA, and Blockchain
-          domains. Passionate about creating fast, accessible, and user-centric
-          experiences.
-        </p>
-        <div className="flex gap-4 my-6">
-          <a
-            href={resumePDF}
-            download="Rohit_Kumar_CV.pdf"
-            className="rounded-2xl px-4 py-2 transition border border-black bg-white text-black hover:bg-black hover:text-white text-sm font-semibold inline-block text-center shadow-sm"
-          >
-            Download Resume
-          </a>
-        </div>
-      </div>
-      <div>
-        <h2 className="text-xl font-semibold py-2">Socials</h2>
-        <div className="flex items-center justify-start gap-3 mt-1">
-          {socialData.map((social) => (
-            <div key={social.id} className="relative group">
-              <Link
-                to={social.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block hover:scale-110 transition"
+    <mark className="inline-block rounded-full bg-brand px-[0.18em] pb-[0.05em] text-ink">
+      {children}
+    </mark>
+  );
+}
+
+export default function Hero() {
+  return (
+    <section
+      id="overview"
+      style={{ "--hero-r": "clamp(1.75rem, 4vw, 2.5rem)" }}
+      className="relative isolate overflow-hidden pb-4 sm:pb-6"
+    >
+      <div className="w-full">
+        <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(17.5rem,22.5rem)]">
+          <div className="animate-reveal flex min-h-0 flex-col gap-6 rounded-[var(--hero-r)] bg-white p-[clamp(1.5rem,4vw,3.5rem)] shadow-card sm:gap-7 md:min-h-[32.5rem]">
+            <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 pb-2 md:mb-auto">
+              <span className="inline-flex min-h-9 items-center gap-2.5 rounded-full border border-rule bg-white px-4 text-[0.8125rem] font-semibold text-ink shadow-card">
+                <span className="relative flex size-[0.5625rem]">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-brand opacity-70 motion-reduce:animate-none" />
+                  <span className="relative inline-flex size-full rounded-full bg-brand" />
+                </span>
+                Open to full-time &amp; contract · Remote
+              </span>
+              <Eyebrow className="text-dim">
+                {SITE_METADATA.eyebrow}
+              </Eyebrow>
+            </div>
+
+            <h1 className="text-balance text-[clamp(2.75rem,7.4vw,6.25rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-ink">
+              Build. Ship. <HeroHighlight>Scale.</HeroHighlight>
+            </h1>
+
+            <p className="max-w-[38em] text-[clamp(1.0625rem,1.4vw,1.25rem)] font-medium leading-relaxed text-dim">
+              Hi, I&apos;m{" "}
+              <strong className="font-semibold text-ink">{SITE_METADATA.name}</strong>.{" "}
+              {SITE_BIO.heroLead}
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-white shadow-card transition hover:opacity-90 sm:flex-none"
               >
-                <img src={social.icon} alt={social.name} className="w-12 h-12" />
-              </Link>
-              {/* Tooltip */}
-              <div className="absolute -top-9 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 text-white text-[11px] font-medium rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                {social.name}
-                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900" />
-              </div>
+                Explore Projects <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href={resumePDF}
+                download="Rohit_Kumar_CV.pdf"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-rule bg-white px-6 py-3.5 text-sm font-semibold text-ink transition hover:bg-brand/20 sm:flex-none"
+              >
+                <Download className="h-4 w-4" /> Resume
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center border-b-[1.5px] border-dim pb-0.5 text-sm font-semibold text-dim transition-opacity hover:opacity-70 sm:ml-1"
+              >
+                Let&apos;s talk ↗
+              </a>
+            </div>
+
+          </div>
+
+          <aside className="hidden flex-col gap-4 md:flex" aria-label="Profile and studio">
+            <HeroProfileCard className="flex-1" />
+            <SargFollowersCard />
+          </aside>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-4 md:hidden">
+          <HeroProfileCard />
+          <SargFollowersCard />
+        </div>
+
+        <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-6 rounded-[var(--hero-r)] bg-white px-[clamp(1.5rem,4vw,3.5rem)] py-7 shadow-card sm:grid-cols-4 sm:gap-y-4 lg:flex lg:justify-between lg:gap-x-10">
+          {KEY_METRICS.map((metric) => (
+            <div key={metric.label} className="min-w-[7rem]">
+              <dt className="text-[0.6875rem] font-semibold uppercase tracking-wider text-dim">
+                {metric.label}
+              </dt>
+              <dd className="mt-1 text-[1.875rem] font-semibold leading-none tracking-[-0.05em] text-ink lg:text-[2.25rem]">
+                {metric.value}
+              </dd>
+              <p className="mt-1 text-xs text-dim">{metric.sub}</p>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Hero;
+}
